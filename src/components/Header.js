@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="mt-4">
         <ul className="flex space-x-4">
           <li>
-            <a href="/">Generator</a>
+            <a href="/">Home</a>
           </li>
           <li>
             <a href="/gallery">Gallery</a>
