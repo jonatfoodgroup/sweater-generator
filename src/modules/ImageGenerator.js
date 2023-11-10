@@ -4,12 +4,6 @@ import axios from "axios";
 const apiKey = "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";
 const apiRoute = "https://api.openai.com/v1/images/generations";
 
-const promptOptions = [
-  "Generate a sweater with a pizza pattern.",
-  "Create a sweater with a sushi design.",
-  "Design a sweater featuring burgers and fries.",
-];
-
 function ImageGenerator() {
   const [selectedPrompt, setSelectedPrompt] = useState("");
   const [customPrompt, setCustomPrompt] = useState("");
@@ -74,24 +68,6 @@ function ImageGenerator() {
       >
         Generate Images
       </button>
-
-      <div className="mt-4">
-        <p className="font-bold">Select a Food Sweater Design:</p>
-        <div className="flex flex-wrap mt-2">
-          {promptOptions.map((option, index) => (
-            <button
-              key={index}
-              className={`p-2 border-gray-300 text-black border rounded-md mx-2 mb-2 hover:bg-gray-100 focus:outline-none focus:border-blue-500 ${
-                selectedPrompt === option ? "bg-blue-500 text-white" : ""
-              }`}
-              onClick={() => setSelectedPrompt(option)}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      </div>
-
       <div className="mt-4">
         {/* Display the generated images here */}
         {generatedImages.map((image, index) => (

@@ -1,12 +1,40 @@
 import React from "react";
 import ImageGenerator from "./ImageGenerator";
+import Image from "../components/Image";
+
+// Define an array of image URLs
+const imageUrls = [
+  "https://source.unsplash.com/random/400x300?hotdog",
+  "https://source.unsplash.com/random/400x300?sweater",
+  "https://source.unsplash.com/random/400x300?food",
+  "https://source.unsplash.com/random/400x300?hoodie",
+];
 
 const Masthead = () => {
   return (
-    <div className="bg-blue-500 p-16 text-white">
-      <div className="container mx-auto flex flex-col md:flex-row items-center">
-        {" "}
-        <div className="md:w-1/2 mb-4 md:mb-0">
+    <div className="bg-gray-900 text-white">
+      {/* Content Centered Above */}
+      <ContentBlock />
+
+      {/* Prompt Below */}
+      <div className="container mx-auto text-center" style={{maxWidth: 600}}>
+        <ImageGenerator />
+      </div>
+
+      {/* Images from Array */}
+      <div className="container mx-auto flex flex-wrap justify-center py-8">
+        {imageUrls.map((imageUrl, index) => (
+            <Image imageUrl={imageUrl} key={index} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ContentBlock = () => {
+  return (
+    <div className="container mx-auto py-16 text-center">
+        <div className="mx-auto" style={{maxWidth: 600}}>
           <h1 className="text-5xl font-bold mb-4">
             Celebrate the Season with Food Sweater Magic!
           </h1>
@@ -16,43 +44,9 @@ const Masthead = () => {
             and let your creativity run wild as you craft delicious and
             heartwarming designs to share with the world!
           </p>
-
-          <ImageGenerator />
-        </div>
-        <div className="md:w-1/2 flex flex-wrap">
-          {/* Food Sweater Images */}
-          <div className="w-1/2 p-2">
-            <img
-              src="https://source.unsplash.com/random/400x300?hotdog"
-              alt="Food Sweater 1"
-              className="w-full h-auto rounded-md"
-            />
-          </div>
-          <div className="w-1/2 p-2">
-            <img
-              src="https://source.unsplash.com/random/400x300?sweater"
-              alt="Food Sweater 2"
-              className="w-full h-auto rounded-md"
-            />
-          </div>
-          <div className="w-1/2 p-2">
-            <img
-              src="https://source.unsplash.com/random/400x300?food"
-              alt="Food Sweater 3"
-              className="w-full h-auto rounded-md"
-            />
-          </div>
-          <div className="w-1/2 p-2">
-            <img
-              src="https://source.unsplash.com/random/400x300?hoodie"
-              alt="Food Sweater 4"
-              className="w-full h-auto rounded-md"
-            />
-          </div>
         </div>
       </div>
-    </div>
-  );
-};
+  )
+}
 
 export default Masthead;

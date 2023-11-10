@@ -2,8 +2,8 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="bg-black text-white p-4">
-      <h1 className="text-3xl font-bold">The Food Group Sweater Generator</h1>
+    <header className="bg-black text-white p-4 flex flex-col items-center justify-center">
+      <h1 className="text-3xl font-bold text-center">The Food Group Sweater Generator</h1>
       <nav className="mt-4">
         <ul className="flex space-x-4">
           <li>
