@@ -1,6 +1,6 @@
 import React from "react";
 import ImageGenerator from "./ImageGenerator";
-import Image from "../components/Image";
+import Gallery from "./Gallery";
 
 // Define an array of image URLs
 const imageUrls = [
@@ -21,12 +21,8 @@ const Masthead = () => {
         <ImageGenerator />
       </div>
 
-      {/* Images from Array */}
-      <div className="container mx-auto flex flex-wrap justify-center py-8">
-        {imageUrls.map((imageUrl, index) => (
-            <Image imageUrl={imageUrl} key={index} />
-        ))}
-      </div>
+      {/* Gallery Below */}
+      <Gallery images={imageUrls} />
     </div>
   );
 };
