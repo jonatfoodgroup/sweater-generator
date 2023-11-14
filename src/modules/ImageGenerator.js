@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const apiKey = "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";
+const apiKey = "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";
 const apiRoute = "https://api.openai.com/v1/images/generations";
 
 function ImageGenerator() {
@@ -16,7 +16,7 @@ function ImageGenerator() {
     }
   
 
-    let tfgRecos = "The sweater should be made of the food and in a digital art style. This is the prompt fromthe client";
+    let tfgRecos = "A super cools weatshirt made out of food to showcase how AI interprets. Should be in photoshoot style";
     promptToUse = promptToUse + tfgRecos;
 
     // Make a POST request to the OpenAI API
@@ -24,7 +24,11 @@ function ImageGenerator() {
       const response = await axios.post(
         apiRoute,
         {
-          prompt: promptToUse,
+          "prompt": promptToUse,
+          "model": "dall-e-3",
+          "n": 1,
+          "size": "1024x1024",
+          "style": 'vivid'
           // You may need to provide other parameters based on the OpenAI API documentation
         },
         {
@@ -82,5 +86,17 @@ function ImageGenerator() {
     </div>
   );
 }
+
+const AddImageToGallery = ({ imageUrl }) => {
+  return (
+    <div className="w-1/4 p-2">
+      <img
+        src={imageUrl}
+        alt="Food Sweater"
+        className="w-full h-full object-cover rounded-md"
+      />
+    </div>
+  );
+};
 
 export default ImageGenerator;
