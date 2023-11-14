@@ -1,6 +1,7 @@
 import React from "react";
 import ImageGenerator from "./ImageGenerator";
 import Gallery from "./Gallery";
+import Footer from "./Footer";
 
 // Define an array of image URLs
 const imageUrls = [
@@ -23,6 +24,8 @@ const Masthead = () => {
 
       {/* Gallery Below */}
       <Gallery images={imageUrls} />
+
+      <Footer />
     </div>
   );
 };
