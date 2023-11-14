@@ -2,12 +2,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://use.typekit.net/wfb1qvy.css");
+
+
+
+body {
+  font-family: sway-variable, sans-serif;
+  font-variation-settings: "CNST" 100, "wght" 700;
+}
+
 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    font-family: sway-variable, sans-serif;
+  font-variation-settings: "CNST" 100, "wght" 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

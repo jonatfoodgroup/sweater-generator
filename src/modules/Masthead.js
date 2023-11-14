@@ -29,17 +29,12 @@ const Masthead = () => {
 
 const ContentBlock = () => {
   return (
-    <div className="container mx-auto py-16 text-center">
-        <div className="mx-auto" style={{maxWidth: 600}}>
-          <h1 className="text-5xl font-bold mb-4">
-            Celebrate the Season with Food Sweater Magic!
+    <div className="container mx-auto py-16 px-5	 text-center">
+        <div className="mx-auto" style={{maxWidth: 1400}}>
+          <h1 className="text-2xl md:text-5xl mb-3">
+          Get into the holiday spirit and design your own festive food-themed sweaters with our magical generator. 
           </h1>
-          <p className="text-lg">
-            Get into the holiday spirit and design your own festive food-themed
-            sweaters with our magical generator. Embrace the joy of the season
-            and let your creativity run wild as you craft delicious and
-            heartwarming designs to share with the world!
-          </p>
+          
         </div>
       </div>
   )
