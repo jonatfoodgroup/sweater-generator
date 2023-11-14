@@ -1,24 +1,18 @@
 import React from "react";
 import Image from "../components/Image";
 import { app, 
-  addGalleryItem
+  addGalleryItem,
+  getImagesFromStorage
 } from "../firebase/firebaseConfig";
-import { ref, onValue, getDatabase } from "firebase/database";
 
 const Gallery = () => {
   const [images, setImages] = React.useState([]);
 
   React.useEffect(() => {
-    const db = getDatabase(app);
-    const galleryRef = ref(db, "gallery");
-    onValue(galleryRef, (snapshot) => {
-      const data = snapshot.val();
-      console.log('Images: ', data);
-      const gallery = [];
-      for (let key in data) {
-        gallery.push(data[key]);
-      }
-      setImages(gallery);
+    // Get the images from Firebase Storage
+    getImagesFromStorage().then((imageUrls) => {
+      console.log("imageUrls: ", imageUrls);
+      setImages(imageUrls);
     });
   }, []);
 
@@ -26,9 +20,7 @@ const Gallery = () => {
     <>
     <GalleryForm />
     <div className="container mx-auto flex flex-wrap justify-center py-8 p-10 rounded-lg bg-slate-800">
-      <h2 className="text-4xl  mb-4 text-amber-300">Checkout the TFG Closet</h2>
-  
-      
+      <h2 className="text-4xl  mb-4 text-amber-300">Checkout the TFG Closet</h2>  
       <GalleryImages images={images} />
       </div>
     </>

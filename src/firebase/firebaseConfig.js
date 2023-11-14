@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL,listAll
 
 } from "firebase/storage";
 import { 
@@ -41,6 +41,8 @@ export const addGalleryItem = async (imageFile) => {
     // Get the download URL of the uploaded image
     const downloadURL = await getDownloadURL(imageRef);
 
+    console.log("Image URL: ", downloadURL);
+
     // Store the download URL in the Firebase Realtime Database
     const dbRef = ref(db, "gallery");
     push(dbRef, downloadURL);
@@ -48,3 +50,29 @@ export const addGalleryItem = async (imageFile) => {
     console.error("Error uploading image:", error);
   }
 };
+
+export const getImagesFromStorage = async () => {
+  console.log("Getting images from storage");
+
+  const galleryRef = storageRef(storage, "gallery");
+  const imageUrls = [];
+
+  try {
+    // Get image URLs from Firebase Storage
+    const listResult = await listAll(galleryRef);
+    console.log("listResult: ", listResult);
+    const imageRefs = listResult.items;
+
+    for (const imageRef of imageRefs) {
+      const imageUrl = await getDownloadURL(imageRef);
+      imageUrls.push(imageUrl);
+    }
+
+    console.log("Image URLs: ", imageUrls);
+
+    return imageUrls;
+  } catch (error) {
+    console.error("Error getting images:", error);
+  }
+}
+

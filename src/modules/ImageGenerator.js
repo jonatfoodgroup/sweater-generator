@@ -54,7 +54,7 @@ function ImageGenerator() {
       console.log(generatedImagesData.data);
   
       // Extract the image URLs from the response and update the state
-      const generatedImageUrls = generatedImagesData.data.map((image) => image.url);
+      let generatedImageUrls = generatedImagesData.data.map((image) => image.url);
       setGeneratedImages(generatedImageUrls);
 
       setIsLoading(false);
@@ -100,7 +100,7 @@ function ImageGenerator() {
             key={index}
             src={image}
             alt={`Generated Image ${index}`}
-            className="w-64 h-64 mx-auto my-2"
+            className="mx-auto my-2 rounded-lg"
           />
           <button
             className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
@@ -121,6 +121,7 @@ const DownloadButton = ({
     // TODO: Implement this function
     const response = await fetch(imageUrl);
     const blob = await response.blob();
+
     const url = window.URL.createObjectURL(blob);
 
     addGalleryItem(url).then(() => {
@@ -137,7 +138,7 @@ const DownloadButton = ({
       className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
       onClick={() => handleDownloadImage(imageUrl)}
     >
-      <ArrowDownTrayIcon className="inline-block mr-2" />Download Image
+      <ArrowDownTrayIcon className="inline-block mr-2 h-5 w-5" />
     </button>
   )
 }
