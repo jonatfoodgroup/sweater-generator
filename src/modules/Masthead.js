@@ -12,14 +12,14 @@ const imageUrls = [
 ];
 
 const Masthead = () => {
-  
+
   return (
-    <div className="text-black"  id="generator">
+    <div className="text-black" id="generator">
       {/* Content Centered Above */}
       <ContentBlock />
 
       {/* Prompt Below */}
-      <div className="container mx-auto text-center" style={{maxWidth: 600}}>
+      <div className="container mx-auto text-center" style={{ maxWidth: 600 }}>
         <ImageGenerator />
       </div>
 
@@ -34,12 +34,12 @@ const Masthead = () => {
 const ContentBlock = () => {
   return (
     <div className="container mx-auto py-16 px-5	 text-center">
-        <div className="mx-auto" style={{maxWidth: 1400}}>
-          <h2 className="text-2xl md:text-5xl text-black mb-3">
-          Get into the holiday spirit and design your own festive food-themed sweaters with our magical generator. 
-          </h2>
-        </div>
+      <div className="mx-auto" style={{ maxWidth: 1400 }}>
+        <h2 className="text-2xl md:text-5xl text-black mb-3">
+          Get into the holiday spirit and design your own festive food-themed sweaters with our magical generator.
+        </h2>
       </div>
+    </div>
   )
 }
 
