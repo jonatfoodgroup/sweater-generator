@@ -13,7 +13,7 @@ const Header = () => {
 <div class="siteIntro">
   <div class="titleBox" data-aos="fade-up">
     <div class="siteTitle">
-    <img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="w-64" />
+    <img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="mb-4 m-auto w-64" />
       <h1>HOLIDAY SWEATER</h1>
       <svg viewBox="0 0 880 140">
         <symbol id="s-text">
