@@ -12,8 +12,9 @@ const imageUrls = [
 ];
 
 const Masthead = () => {
+  
   return (
-    <div className="text-black">
+    <div className="text-black"  id="generator">
       {/* Content Centered Above */}
       <ContentBlock />
 
