@@ -13,7 +13,7 @@ const imageUrls = [
 
 const Masthead = () => {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="text-black">
       {/* Content Centered Above */}
       <ContentBlock />
 

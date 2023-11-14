@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <header className="bg-black text-white p-4 flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold text-center">The Food Group Sweater Generator</h1>
+   {/*   <h1 className="text-3xl font-bold text-center">The Food Group Sweater Generator</h1>
       <nav className="mt-4">
         <ul className="flex space-x-4">
           <li>
@@ -16,7 +16,12 @@ const Header = () => {
             <a href="/about">About</a>
           </li>
         </ul>
-      </nav>
+  </nav> */}
+
+  <img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="w-64" />
+
+<h1 className="text-4xl font-bold text-center">HOLIDAY SWEATER</h1>
+<h2 className="text-8xl font-bold text-center">GENERATOR</h2>
     </header>
   );
 };
