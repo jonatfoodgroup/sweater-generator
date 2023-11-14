@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ArrowDownTrayIcon, HandThumbUpIcon } from "@heroicons/react/24/solid";
+
 import { FacebookShareButton, TwitterShareButton, EmailShareButton } from "react-share";
 
 const Image = ({ imageUrl, setSelectedImage }) => {
@@ -21,7 +22,7 @@ const Image = ({ imageUrl, setSelectedImage }) => {
       />
       {hovered && (
         <div className="absolute top-0 right-0 mt-2 md:mt-4 mr-2 md:mr-4 flex flex-row space-x-2">
-          <ArrowDownTrayIcon className="h-8 w-8 text-white cursor-pointer" />
+          <DownloadButton className="h-8 w-8 text-white cursor-pointer" />
           <HandThumbUpIcon className="h-8 w-8 text-white cursor-pointer" />
           
           {/* Share buttons */}
@@ -42,5 +43,32 @@ const Image = ({ imageUrl, setSelectedImage }) => {
     </div>
   );
 };
+
+const DownloadButton = ({ imageUrl }) => {
+  const downloadImage = () => {
+  // download the image to my local machine with a filename of "food-sweater.png"
+  const link = document.createElement("a");
+  link.href = imageUrl;
+  link.download = "food-sweater.png";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+   
+  };
+
+  return (
+    <button
+      className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+      onClick={downloadImage}
+    >
+      Download
+    </button>
+  );
+}
+
+
+
+
 
 export default Image;
