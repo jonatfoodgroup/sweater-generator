@@ -27,3 +27,116 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+.siteIntro {
+  background: url(https://thefoodgroup.com/wp-content/uploads/2023/11/holiday-sweater-pattern.jpg)
+    no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 3s;
+}
+  
+
+  h1 {
+    text-align:center;
+    font-variation-settings: "CNST" 100, "wght" 900;
+    line-height:100%;
+    margin:0;
+    font-size: clamp(1.5rem, 3vw, 4rem);
+    letter-spacing:3px;
+    color: #859123;
+  }
+  .titleBox {
+    background-color:black;
+    min-height:45vh;
+    display:block;
+    padding: 1rem;
+    border-radius:18px;
+    text-align:center;
+    max-width:1000px;
+    width:750px;
+    
+  }
+  .siteTitle {
+   border-radius:6px;
+    border:2px dashed #F8D647;
+    padding:4rem 1rem;
+    min-height:100%;
+  }
+  
+  svg {
+    display: flex;
+    font:8rem "sway-variable", sans-serif;
+   /* font-variation-settings: "CNST" 100, "wght" 700;*/
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
+  text {
+    letter-spacing: 4px;
+    font-variation-settings: "CNST" 100, "wght" 900;
+    /*fill:#000; /* covers part of the outline to make it appear thnner*/
+  }
+  
+  .letter {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 3px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+  }
+  
+  .letter:nth-child(1) {
+    stroke: #859123;/*green*/
+    animation-delay: -1;
+  }
+  
+  .letter:nth-child(2) {
+    stroke: #c0392b;
+    animation-delay: -2s;
+  }
+  
+  .letter:nth-child(3) {
+    stroke: #ffffff;
+    animation-delay: -3s;
+  }
+  
+  .letter:nth-child(4) {
+    stroke: #F3AF4C;
+    animation-delay: -4s;
+  }
+  
+  .letter:nth-child(5) {
+    stroke: #317C65;
+    animation-delay: -5s;
+  }
+  
+  @keyframes stroke-offset {
+    100% {
+      stroke-dashoffset: -35%;
+    }
+  }
+
+
+  button {
+    padding:.75rem;
+    
+    outline:none;
+    border:none;
+    margin:1em;
+    font-size:1rem;
+    font-variation-settings: "CNST" 100, "wght" 700;
+    font-family: "sway-variable", sans-serif;
+    background-color:#F8D647;
+  }

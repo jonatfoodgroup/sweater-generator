@@ -8,8 +8,20 @@ function App() {
   const [selectedImage, setSelectedImage] = useState(null);
   return (
     <div className="App">
-      <Header />
-      <Masthead selectedImage={selectedImage} setSelectedImage={setSelectedImage} />
+
+<Header />
+
+<div style={{ 
+     // add backgroundImage from public folder:
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/images/background.jpg'})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      backgroundSize: 'cover' 
+    }}>
+<Masthead selectedImage={selectedImage} setSelectedImage={setSelectedImage} />
+
+</div>
+
     </div>
   );
 }

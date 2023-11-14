@@ -13,7 +13,7 @@ const imageUrls = [
 
 const Masthead = () => {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="text-black">
       {/* Content Centered Above */}
       <ContentBlock />
 
@@ -37,7 +37,6 @@ const ContentBlock = () => {
           <h1 className="text-2xl md:text-5xl mb-3">
           Get into the holiday spirit and design your own festive food-themed sweaters with our magical generator. 
           </h1>
-          
         </div>
       </div>
   )
