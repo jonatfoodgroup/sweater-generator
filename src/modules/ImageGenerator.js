@@ -1,15 +1,24 @@
 import React, { useState } from "react";
 import axios from "axios";
 import {addGalleryItem} from "../firebase/firebaseConfig";
-const apiKey = "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";
+import {
+  ArrowDownTrayIcon,
+} from '@heroicons/react/24/outline';
+
+const apiKey = process.env.REACT_APP_OPENAI_API_KEY || "";
+
 const apiRoute = "https://api.openai.com/v1/images/generations";
 
 function ImageGenerator() {
   const [selectedPrompt, setSelectedPrompt] = useState("");
   const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImages, setGeneratedImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleGenerateImages = async () => {
+
+    setIsLoading(true);
+
     let promptToUse = selectedPrompt;
     if (customPrompt.trim() !== "") {
       promptToUse = customPrompt;
@@ -48,8 +57,12 @@ function ImageGenerator() {
       const generatedImageUrls = generatedImagesData.data.map((image) => image.url);
       setGeneratedImages(generatedImageUrls);
 
+      setIsLoading(false);
+
     } catch (error) {
       console.error('Error generating images:', error);
+
+      setIsLoading(false);
     }
   };
   
@@ -70,7 +83,13 @@ function ImageGenerator() {
         className="w-auto bg-black text-white py-3 px-6 rounded-md hover:bg-blue-600"
         onClick={handleGenerateImages}
       >
-        Generate Images
+        {
+          isLoading ? (
+            <Loadericon isActive={isLoading} />
+          ) : (
+            generatedImages.length > 0 ? "Regenerate" : "Generate Images"
+          )
+        }
       </button>
       <div className="mt-4">
         {/* Display the generated images here */}
@@ -86,6 +105,7 @@ function ImageGenerator() {
             className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
             onClick={() => addGalleryItem(image)}
           >Add to Gallery</button>
+          <DownloadButton imageUrl={image} />
           </div>
         ))}
       </div>
@@ -93,20 +113,47 @@ function ImageGenerator() {
   );
 }
 
-const AddImageToGallery = ({ imageUrl }) => {
+const DownloadButton = ({
+  imageUrl,
+}) => {
+  const handleDownloadImage = async (imageUrl) => {
+    // TODO: Implement this function
+    const response = await fetch(imageUrl);
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    addGalleryItem(url).then(() => {
+      window.URL.revokeObjectURL(url);
+    }).catch((error) => {
+      console.error("Error adding image to gallery:", error);
+    })
+    
+  };
+  
+  
   return (
-    <div className="w-1/4 p-2">
-      <img
-        src={imageUrl}
-        alt="Food Sweater"
-        className="w-full h-full object-cover rounded-md"
-      />
-      <button
-        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-        onClick={() => addGalleryItem(imageUrl)}
-      >add item</button>
-    </div>
-  );
-};
+    <button
+      className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+      onClick={() => handleDownloadImage(imageUrl)}
+    >
+      <ArrowDownTrayIcon className="inline-block mr-2" />Download Image
+    </button>
+  )
+}
+
+const Loadericon = ({
+  isActive
+}) => {
+  if (!isActive) {
+    return null;
+  }
+  
+  return (
+    <svg className="animate-spin h-5 w-5 ml-2 inline-block" viewBox="0 0 24 24">
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+    </svg>
+  )
+}
 
 export default ImageGenerator;
