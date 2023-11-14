@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-
-const apiKey = "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";
+import {addGalleryItem} from "../firebase/firebaseConfig";
+const apiKey = "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";
 const apiRoute = "https://api.openai.com/v1/images/generations";
 
 function ImageGenerator() {
@@ -16,7 +16,7 @@ function ImageGenerator() {
     }
   
 
-    let tfgRecos = "A super cools weatshirt made out of food to showcase how AI interprets. Should be in photoshoot style";
+    let tfgRecos = "A super cool sweatshirt made out of food to showcase how AI interprets. Should be in photoshoot style";
     promptToUse = promptToUse + tfgRecos;
 
     // Make a POST request to the OpenAI API
@@ -75,12 +75,18 @@ function ImageGenerator() {
       <div className="mt-4">
         {/* Display the generated images here */}
         {generatedImages.map((image, index) => (
-          <img
+         <div>
+           <img
             key={index}
             src={image}
             alt={`Generated Image ${index}`}
             className="w-64 h-64 mx-auto my-2"
           />
+          <button
+            className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+            onClick={() => addGalleryItem(image)}
+          >Add to Gallery</button>
+          </div>
         ))}
       </div>
     </div>
@@ -95,6 +101,10 @@ const AddImageToGallery = ({ imageUrl }) => {
         alt="Food Sweater"
         className="w-full h-full object-cover rounded-md"
       />
+      <button
+        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+        onClick={() => addGalleryItem(imageUrl)}
+      >add item</button>
     </div>
   );
 };
