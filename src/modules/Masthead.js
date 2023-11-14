@@ -35,9 +35,9 @@ const ContentBlock = () => {
   return (
     <div className="container mx-auto py-16 px-5	 text-center">
         <div className="mx-auto" style={{maxWidth: 1400}}>
-          <h1 className="text-2xl md:text-5xl mb-3">
+          <h2 className="text-2xl md:text-5xl text-black mb-3">
           Get into the holiday spirit and design your own festive food-themed sweaters with our magical generator. 
-          </h1>
+          </h2>
         </div>
       </div>
   )

@@ -69,7 +69,7 @@ function ImageGenerator() {
 
   return (
     <div className="container mx-auto mt-4 p-10 bg-black rounded-lg   text-white">
-      <h1 className="text-4xl mb-4">Enter your prompt below</h1>
+      <h2 className="text-4xl mb-4">Enter your prompt below</h2>
 
       <textarea
         className="w-full p-3 text-black border-2 border-blue-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-4"
@@ -79,8 +79,9 @@ function ImageGenerator() {
         rows="4" // Adjust the number of rows as needed
       />
 
+
       <button
-        className="w-auto bg-amber-300 text-black py-3 px-6 rounded-md hover:bg-amber-400"
+        className="w-auto bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400  mt-4 font-bold   flex items-center m-auto"
         onClick={handleGenerateImages}
       >
         {
