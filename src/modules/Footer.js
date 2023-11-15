@@ -8,7 +8,8 @@ const Footer = () => {
           The Food Group will donate 10 meals to feeding America.
 
           <br></br>
-          (insert progress bar here)
+          {/* Tailwind progress */}
+          
         </p></div> </div>
 
       <div className="container mx-auto py-16 px-5 	 bg-slate-300	text-center">

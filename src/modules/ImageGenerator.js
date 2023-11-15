@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {addGalleryItem} from "../firebase/firebaseConfig";
 import {
@@ -9,7 +9,9 @@ const apiKey = process.env.REACT_APP_OPENAI_API_KEY || "";
 
 const apiRoute = "https://api.openai.com/v1/images/generations";
 
-function ImageGenerator() {
+function ImageGenerator({
+  addImage,
+}) {
   const [selectedPrompt, setSelectedPrompt] = useState("");
   const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImages, setGeneratedImages] = useState([]);
@@ -50,9 +52,8 @@ function ImageGenerator() {
   
       // Handle the response from OpenAI
       const generatedImagesData = response.data; // Modify this based on the API response structure
-
-      console.log(generatedImagesData.data);
-  
+        
+      addImage(generatedImagesData.data[0].url);
       // Extract the image URLs from the response and update the state
       let generatedImageUrls = generatedImagesData.data.map((image) => image.url);
       setGeneratedImages(generatedImageUrls);
@@ -65,11 +66,13 @@ function ImageGenerator() {
       setIsLoading(false);
     }
   };
+
+
   
 
   return (
     <div className="container mx-auto mt-4 p-10 bg-black rounded-lg   text-white">
-      <h2 className="text-4xl mb-4">Enter your prompt below</h2>
+      <h2 className="text-xl mb-4">Enter your prompt below</h2>
 
       <textarea
         className="w-full p-3 text-black border-2 border-blue-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-4"
@@ -92,56 +95,11 @@ function ImageGenerator() {
           )
         }
       </button>
-      <div className="mt-4">
-        {/* Display the generated images here */}
-        {generatedImages.map((image, index) => (
-         <div>
-           <img
-            key={index}
-            src={image}
-            alt={`Generated Image ${index}`}
-            className="mx-auto my-2 rounded-lg"
-          />
-          <button
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-            onClick={() => addGalleryItem(image)}
-          >Add to Gallery</button>
-          <DownloadButton imageUrl={image} />
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
 
-const DownloadButton = ({
-  imageUrl,
-}) => {
-  const handleDownloadImage = async (imageUrl) => {
-    // TODO: Implement this function
-    const response = await fetch(imageUrl);
-    const blob = await response.blob();
 
-    const url = window.URL.createObjectURL(blob);
-
-    addGalleryItem(url).then(() => {
-      window.URL.revokeObjectURL(url);
-    }).catch((error) => {
-      console.error("Error adding image to gallery:", error);
-    })
-    
-  };
-  
-  
-  return (
-    <button
-      className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-      onClick={() => handleDownloadImage(imageUrl)}
-    >
-      <ArrowDownTrayIcon className="inline-block mr-2 h-5 w-5" />
-    </button>
-  )
-}
 
 const Loadericon = ({
   isActive
