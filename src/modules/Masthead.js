@@ -27,9 +27,7 @@ const Masthead = () => {
                 generatedImages.length > 0 && (
                   <div className="w-full">
                     <h2 className="text-3xl text-white text-center">Your Sweaters</h2>
-                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
                     <ImageTiles images={generatedImages} />
-                    </div>
                     <DonationCard />
                   </div>
                 )
