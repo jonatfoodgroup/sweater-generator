@@ -15,7 +15,6 @@ const Masthead = () => {
         <div className="flex stitchedBorder p-8" >
 
           <div className="w-1/2 text-white mr-4">
-            <ContentBlock />
             <ImageGenerator addImage={addImage} />
           </div>
 
