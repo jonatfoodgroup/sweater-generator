@@ -83,6 +83,8 @@ code {
     border:2px dashed #F8D647;
     min-height:100%;
   }
+  .whiteStitch {    border:2px dashed #fff;
+  }
   
   svg {
     display: flex;

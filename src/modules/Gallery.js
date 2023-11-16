@@ -19,10 +19,29 @@ const Gallery = () => {
   return (
     <>
     {/* <GalleryForm /> */}
- <h2 className="text-4xl  mb-4 text-amber-300 block">Checkout the TFG Closet</h2>  
-       <div className="container mx-auto flex flex-wrap justify-center py-8 p-10 rounded-lg bg-slate-800 stitchedBorder mt-20">
- 
-      <GalleryImages images={images} />
+
+
+
+    <div  className="pt-10 pb-10"
+        style={{
+          // add backgroundImage from public folder:
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "/images/background-wood.jpg"
+          })`,
+          backgroundRepeat: "no-repeat",
+         
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+        }}
+      >
+
+
+<div className=" mx-auto  p-4 rounded-lg  mx-6 md:mx-20 text-white  bg-slate-800" style={{ maxWidth: 1600 }}>
+<div className=" stitchedBorder whiteStitch">
+        <h2 className="text-4xl  mb-4 text-amber-300 text-center mt-6 mx-2 block">Checkout the TFG Closet</h2>  
+       <GalleryImages images={images} />
+      </div>
+      </div>
       </div>
     </>
   );
