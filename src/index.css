@@ -74,7 +74,7 @@ code {
     text-align:center;
     max-width:1000px;
     width:750px;
-    animation: fadeInFromRight 1s ease-in-out forwards;
+    animation: fadeInFromBottom 1s ease-in-out forwards;
 
   }
 
@@ -146,7 +146,6 @@ code {
 
   button {
     padding:.75rem;
-    
     outline:none;
     border:none;
     margin:1em;
@@ -177,5 +176,15 @@ code {
     to {
       opacity: 1;
       transform: translateX(0);
+    }
+  } 
+   @keyframes fadeInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(70px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }

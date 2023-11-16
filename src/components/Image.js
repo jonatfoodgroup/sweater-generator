@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowDownTrayIcon, HandThumbUpIcon } from "@heroicons/react/24/solid";
+import { FacebookShareButton, FacebookIcon,TwitterIcon, TwitterShareButton,EmailIcon, EmailShareButton } from "react-share";
 
-import { FacebookShareButton, TwitterShareButton, EmailShareButton } from "react-share";
 
 const Image = ({ imageUrl, setSelectedImage }) => {
   const [hovered, setHovered] = useState(false);
@@ -23,19 +23,16 @@ const Image = ({ imageUrl, setSelectedImage }) => {
       {hovered && (
         <div className="absolute top-0 right-0 mt-2 md:mt-4 mr-2 md:mr-4 flex flex-row space-x-2">
           <DownloadButton className="h-8 w-8 text-white cursor-pointer" />
-          <HandThumbUpIcon className="h-8 w-8 text-white cursor-pointer" />
+         
           
           {/* Share buttons */}
           <div className="flex space-x-2">
             <p className="text-white">Share:</p>
             <FacebookShareButton url={shareUrl} quote={title}>
-              Facebook
+              <FacebookIcon size={32} round={true} /> Facebook
             </FacebookShareButton>
-            <TwitterShareButton url={shareUrl} title={title}>
-              Twitter
-            </TwitterShareButton>
             <EmailShareButton url={shareUrl} subject={title}>
-              Email
+              <EmailIcon size={32} round={true} /> Email
             </EmailShareButton>
           </div>
         </div>

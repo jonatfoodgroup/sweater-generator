@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="flex flex-col items-center justify-center">
 <div class="siteIntro ">
-  <div class="titleBox" data-aos="fade-up">
+  <div class="titleBox">
     <div class="siteTitle p-8">
     <img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="mb-4 m-auto w-64" />
       <h1 className="text-amber-300">HOLIDAY SWEATER</h1>
