@@ -75,7 +75,7 @@ function ImageGenerator({
       <h2 className="text-2xl mb-4 text-center">Enter your prompt below</h2>
 
       <textarea
-        className="w-full p-3 text-black border-2 border-amber-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-4"
+        className="w-full p-3 text-black border-2 border-amber-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-2"
         placeholder="Describe your design"
         value={customPrompt}
         onChange={(e) => setCustomPrompt(e.target.value)}
@@ -84,7 +84,7 @@ function ImageGenerator({
 
 
       <button
-        className="w-auto bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400  mt-4 font-bold flex items-center m-auto"
+        className="w-auto bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400  font-bold flex items-center m-auto"
         onClick={handleGenerateImages}
       > 
         {
@@ -95,6 +95,11 @@ function ImageGenerator({
           )
         }
       </button>
+      (to-do add sample prompts)
+ 
+      <button className="border-1  py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black">Generate a sweater with a pizza pattern.</button>
+      <button className="border-1 py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black">Create a sweater with a sushi design.</button>
+      <button className="border-1 py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black">Design a sweater featuring burgers and fries.</button>
     </div>
   );
 }
