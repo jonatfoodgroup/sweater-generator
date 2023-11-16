@@ -71,27 +71,27 @@ function ImageGenerator({
   
 
   return (
-    <div className="container mx-auto mt-4 p-10 bg-black rounded-lg   text-white">
-      <h2 className="text-xl mb-4">Enter your prompt below</h2>
+    <div className="container px-5 mt-10 mx-auto">
+      <h2 className="text-2xl mb-4 text-center">Enter your prompt below</h2>
 
       <textarea
-        className="w-full p-3 text-black border-2 border-blue-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-4"
+        className="w-full p-3 text-black border-2 border-amber-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-4"
         placeholder="Describe your design"
         value={customPrompt}
         onChange={(e) => setCustomPrompt(e.target.value)}
-        rows="4" // Adjust the number of rows as needed
+        rows="2" // Adjust the number of rows as needed
       />
 
 
       <button
-        className="w-auto bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400  mt-4 font-bold   flex items-center m-auto"
+        className="w-auto bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400  mt-4 font-bold flex items-center m-auto"
         onClick={handleGenerateImages}
-      >
+      > 
         {
           isLoading ? (
             <Loadericon isActive={isLoading} />
           ) : (
-            generatedImages.length > 0 ? "Regenerate" : "Generate Images"
+            generatedImages.length > 0 ? "Regenerate" : "Make My Sweater"
           )
         }
       </button>
@@ -109,10 +109,10 @@ const Loadericon = ({
   }
   
   return (
-    <svg className="animate-spin h-5 w-5 ml-2 inline-block" viewBox="0 0 24 24">
+<>   <svg className="animate-spin h-5 w-5 ml-2 inline-block" viewBox="0 0 24 24">
       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-    </svg>
+    </svg> &nbsp;Knitting</> 
   )
 }
 

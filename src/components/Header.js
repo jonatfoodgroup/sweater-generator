@@ -10,9 +10,9 @@ const Header = () => {
   };
   return (
     <header className="flex flex-col items-center justify-center">
-<div class="siteIntro">
+<div class="siteIntro ">
   <div class="titleBox" data-aos="fade-up">
-    <div class="siteTitle">
+    <div class="siteTitle p-8">
     <img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="mb-4 m-auto w-64" />
       <h1 className="text-amber-300">HOLIDAY SWEATER</h1>
       <svg viewBox="0 0 880 140">
@@ -29,7 +29,7 @@ const Header = () => {
               </g>
             </svg>
             <button className="bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto	"
-              onClick={() => scrollToElement("generator")}
+              onClick={() => scrollToElement("imgGenerator")}
             >
               <img
                 src={process.env.PUBLIC_URL + "/images/knittingicon.png"}

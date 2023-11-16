@@ -8,7 +8,6 @@ const Footer = () => {
           The Food Group will donate 10 meals to feeding America.
 
           <br></br>
-          {/* Tailwind progress */}
           
         </p></div> </div>
 

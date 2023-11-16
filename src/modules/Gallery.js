@@ -19,8 +19,9 @@ const Gallery = () => {
   return (
     <>
     {/* <GalleryForm /> */}
-    <div className="container mx-auto flex flex-wrap justify-center py-8 p-10 rounded-lg bg-slate-800 mt-20">
-      <h2 className="text-4xl  mb-4 text-amber-300">Checkout the TFG Closet</h2>  
+ <h2 className="text-4xl  mb-4 text-amber-300 block">Checkout the TFG Closet</h2>  
+       <div className="container mx-auto flex flex-wrap justify-center py-8 p-10 rounded-lg bg-slate-800 stitchedBorder mt-20">
+ 
       <GalleryImages images={images} />
       </div>
     </>

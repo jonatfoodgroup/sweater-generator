@@ -18,14 +18,15 @@ const imageUrls = [
     <div className="App">
       <Header />
 
-      <div
+      <div class="imgGenerator" id="imgGenerator"
         style={{
           // add backgroundImage from public folder:
           backgroundImage: `url(${
             process.env.PUBLIC_URL + "/images/background.jpg"
           })`,
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
+         
+          backgroundPosition: "center center",
           backgroundSize: "cover",
         }}
       >
@@ -33,9 +34,9 @@ const imageUrls = [
           selectedImage={selectedImage}
           setSelectedImage={setSelectedImage}
         />
+        </div>
         <Gallery images={imageUrls} />
         <Footer />
-      </div>
     </div>
   );
 }
