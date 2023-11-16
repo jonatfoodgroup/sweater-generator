@@ -1,35 +1,48 @@
 import React from "react";
 import Image from "../components/Image";
 import { app, 
-  addGalleryItem
+  addGalleryItem,
+  getImagesFromStorage
 } from "../firebase/firebaseConfig";
-import { ref, onValue, getDatabase } from "firebase/database";
 
 const Gallery = () => {
   const [images, setImages] = React.useState([]);
 
   React.useEffect(() => {
-    const db = getDatabase(app);
-    const galleryRef = ref(db, "gallery");
-    onValue(galleryRef, (snapshot) => {
-      const data = snapshot.val();
-      console.log('Images: ', data);
-      const gallery = [];
-      for (let key in data) {
-        gallery.push(data[key]);
-      }
-      setImages(gallery);
+    // Get the images from Firebase Storage
+    getImagesFromStorage().then((imageUrls) => {
+      console.log("imageUrls: ", imageUrls);
+      setImages(imageUrls);
     });
   }, []);
 
   return (
     <>
-    <GalleryForm />
-    <div className="container mx-auto flex flex-wrap justify-center py-8">
-      <h2 className="text-3xl font-bold mb-4">Gallery</h2>
+    {/* <GalleryForm /> */}
+
+
+
+    <div  className="pt-10 pb-10"
+        style={{
+          // add backgroundImage from public folder:
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "/images/background-wood.jpg"
+          })`,
+          backgroundRepeat: "no-repeat",
+         
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+        }}
+      >
+
+
+<div className=" mx-auto  p-4 rounded-lg  mx-6 md:mx-20 text-white  bg-slate-800" style={{ maxWidth: 1600 }}>
+<div className=" stitchedBorder whiteStitch">
+        <h2 className="text-4xl  mb-4 text-amber-300 text-center mt-6 mx-2 block">Checkout the TFG Closet</h2>  
+       <GalleryImages images={images} />
       </div>
-      
-      <GalleryImages images={images} />
+      </div>
+      </div>
     </>
   );
 }
