@@ -8,7 +8,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
     return (
       <ProgressBar
       completed={800}
-      height="50px"
+      height="54px"
       labelColor="#ffffff"
       padding="0px"
       baseBgColor="#2A3844"
