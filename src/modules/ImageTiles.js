@@ -13,7 +13,7 @@ const ImageTiles = ({ images }) => {
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
       {images.map((blob, index) => (
         <div key={index}>
-          <button className="border-1  py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black" onClick={() => handleAddToGallery(blob)}>
+          <button className="border-1  py-2 m-1 border-solid border-amber-400 flex-1 inline-flex items-center h-12 w-15 text-sm rounded-md text-white m-0 bg-black" onClick={() => handleAddToGallery(blob)}>
             <PlusCircleIcon />
             Add to gallery
           </button>
