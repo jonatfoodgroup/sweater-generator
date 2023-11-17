@@ -18,6 +18,7 @@ return (
   <div className="mx-4 ">
     <h3 className="text-amber-300">Your Engagement Matters!</h3>
     <p className="text-white">For every sweater in our gallery, we donate 10 meals to Feeding America!</p>
+    
   </div>
 </div>
 </div>)

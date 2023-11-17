@@ -22,12 +22,11 @@ const imageUrls = [
         style={{
           // add backgroundImage from public folder:
           backgroundImage: `url(${
-            process.env.PUBLIC_URL + "/images/background.jpg"
+            process.env.PUBLIC_URL + '/images/back-stitched.jpg'
           })`,
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "repeat",
          
           backgroundPosition: "center center",
-          backgroundSize: "cover",
         }}
       >
         <Masthead
