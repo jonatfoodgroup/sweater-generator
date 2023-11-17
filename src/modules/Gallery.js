@@ -3,7 +3,7 @@ import Image from "../components/Image";
 import { app, 
   addGalleryItem,
   getImagesFromStorage
-} from "../firebase/firebaseConfig";
+} from "../firebase/storage";
 
 const Gallery = () => {
   const [images, setImages] = React.useState([]);
@@ -18,10 +18,6 @@ const Gallery = () => {
 
   return (
     <>
-    {/* <GalleryForm /> */}
-
-
-
     <div  className="pt-10 pb-10"
         style={{
           // add backgroundImage from public folder:
