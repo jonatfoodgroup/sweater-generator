@@ -6,8 +6,8 @@ import ImageTiles from "../modules/ImageTiles";
 const Masthead = () => {
   const [generatedImages, setGeneratedImages] = React.useState([]);
 
-  const addImage = (imageUrl) => {
-    setGeneratedImages([...generatedImages, imageUrl]);
+  const addImage = (base64Image) => {
+    setGeneratedImages((prevImages) => [...prevImages, base64Image]);
   };
   return (
     <div id="generator" className="h-full flex items-center">

@@ -1,31 +1,57 @@
+import React from "react";
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
 import { storage } from "../firebase/storage";
 
 
 const ImageTiles = ({ images }) => {
-  const handleAddToGallery = async (imageUrl) => {
+  const handleAddToGallery = async (base64Image) => {
     // Get file data from the url using FileReader API
 
   }
 
-
   return (
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
-      {images.map((imageUrl, index) => (
+      {images.map((blob, index) => (
         <div key={index}>
-          <button className="border-1  py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black" onClick={() => handleAddToGallery(imageUrl)}>
+          <button className="border-1  py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black" onClick={() => handleAddToGallery(blob)}>
             <PlusCircleIcon />
             Add to gallery
           </button>
-          <img
-            src={imageUrl}
-            alt={`Generated Image ${index}`}
-            className="w-full h-full object-cover max-h-56	max-w-4xl rounded-lg"
-          />
+          <Image file={blob} />
         </div>
       ))}
     </div>
   );
 };
+
+// Display blob using file reader
+const Image = ({file}) => {
+  const [image, setImage] = React.useState(null);
+
+  React.useEffect(() => {
+    if (file) {
+      console.log("file", file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  }, [file]);
+
+  if (!file) {
+    return null;
+  }
+
+  return (
+    <div className="flex flex-col items-center">
+      <img
+        src={image}
+        className="w-full h-full object-cover max-h-56	max-w-4xl rounded-lg"
+      />
+    </div>
+  );
+}
+
 
 export default ImageTiles;
