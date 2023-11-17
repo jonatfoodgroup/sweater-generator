@@ -1,6 +1,8 @@
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL,listAll
 } from "firebase/storage";
 import { app } from "./firebaseConfig";
+import { db } from "./database";
+import { set, ref, push } from "firebase/database";
 
 export const storage = getStorage(app);
 
@@ -19,6 +21,15 @@ export const addGalleryItem = async (imageFile) => {
     const downloadURL = await getDownloadURL(imageRef);
 
     console.log("Image URL: ", downloadURL);
+
+    // Add the download URL to the database
+    //gallery ref
+    const galleryListRef = ref(db, "gallery");
+
+    //push to gallery
+    const newGalleryItemRef = push(galleryListRef);
+    set(newGalleryItemRef, downloadURL);
+
     return downloadURL;
 
   } catch (error) {

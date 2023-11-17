@@ -1,12 +1,11 @@
 import React from "react";
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
-import { storage } from "../firebase/storage";
+import { addGalleryItem } from "../firebase/storage";
 
 
 const ImageTiles = ({ images }) => {
-  const handleAddToGallery = async (base64Image) => {
-    // Get file data from the url using FileReader API
-
+  const handleAddToGallery = async (blob) => {
+    let image = await addGalleryItem(blob);
   }
 
   return (
