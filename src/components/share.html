@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add the Feather icons stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+  <style>
+    /* Container for the image and social buttons */
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 600px; /* Adjust the max-width as needed */
+    }
+
+    /* Style for the image */
+    .image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Style for the social and download buttons */
+    .buttons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0; /* Initially hide the buttons */
+      transition: opacity 0.3s ease; /* Add a smooth transition effect */
+    }
+
+    /* Show the buttons when hovering over the container */
+    .container:hover .buttons {
+      opacity: 1;
+    }
+
+    .buttons button {
+      margin: 10px 0;
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <img src="https://loremflickr.com/320/240" alt="Your Image" class="image">
+  <div class="buttons">
+    <!-- Replace the Feather icons and add appropriate classes -->
+    <button onclick="shareOnFacebook()"><i data-feather="facebook"></i> Share on Facebook</button>
+    <button onclick="shareOnTwitter()"><i data-feather="twitter"></i> Share on Twitter</button>
+    <button onclick="shareOnInstagram()"><i data-feather="instagram"></i> Share on Instagram</button>
+    <button onclick="downloadImage()"><i data-feather="download"></i> Download Image</button>
+  </div>
+</div>
+
+<!-- Include the Feather icons script -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+  // Call Feather icons to replace the <i> tags with appropriate icons
+  feather.replace();
+
+  function shareOnFacebook() {
+    // Add your Facebook sharing logic here
+    alert("Sharing on Facebook!");
+  }
+
+  function shareOnTwitter() {
+    // Add your Twitter sharing logic here
+    alert("Sharing on Twitter!");
+  }
+
+  function shareOnInstagram() {
+    // Add your Instagram sharing logic here
+    alert("Sharing on Instagram!");
+  }
+
+  function downloadImage() {
+    // Replace "your-image.jpg" with the actual path to your image
+    var imageUrl = "your-image.jpg";
+    var a = document.createElement('a');
+    a.href = imageUrl;
+    a.download = 'downloaded-image.jpg';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+</script>
+
+</body>
+</html>

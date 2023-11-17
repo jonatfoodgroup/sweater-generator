@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { ArrowDownTrayIcon, HandThumbUpIcon } from "@heroicons/react/24/solid";
+import { FacebookShareButton, FacebookIcon,TwitterIcon, TwitterShareButton,EmailIcon, EmailShareButton } from "react-share";
 
-import { FacebookShareButton, TwitterShareButton, EmailShareButton } from "react-share";
 
 const Image = ({ imageUrl, setSelectedImage }) => {
   const [hovered, setHovered] = useState(false);
-
   const shareUrl = window.location.href; // Replace with your own URL
-  const title = "Food Sweater Generator"; // Replace with your own title
+  const title = "The Food Group Holiday Sweater Generator"; // Replace with your own title
 
   return (
     <div
-      className="w-1/2 md:w-1/4 p-2 relative"
+      className="w-1/2 md:w-1/4 relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -20,24 +19,18 @@ const Image = ({ imageUrl, setSelectedImage }) => {
         alt={`Food Sweater`}
         className="w-full h-auto rounded-md"
       />
+      
       {hovered && (
-        <div className="absolute top-0 right-0 mt-2 md:mt-4 mr-2 md:mr-4 flex flex-row space-x-2">
-          <DownloadButton className="h-8 w-8 text-white cursor-pointer" />
-          <HandThumbUpIcon className="h-8 w-8 text-white cursor-pointer" />
-          
-          {/* Share buttons */}
-          <div className="flex space-x-2">
-            <p className="text-white">Share:</p>
-            <FacebookShareButton url={shareUrl} quote={title}>
-              Facebook
-            </FacebookShareButton>
-            <TwitterShareButton url={shareUrl} title={title}>
-              Twitter
-            </TwitterShareButton>
-            <EmailShareButton url={shareUrl} subject={title}>
-              Email
-            </EmailShareButton>
-          </div>
+        <div className="absolute  bottom-0 left-0 mt-1 w-full">
+          <div className="inlineTools inline-flex items-center bg-slate-900 p-4 bg-opacity-80">
+       <DownloadButton className=" text-white  font-bold cursor-pointer" />
+        <FacebookShareButton url={shareUrl} quote={title}>
+          <FacebookIcon size={46} round={true} />
+        </FacebookShareButton>
+        <EmailShareButton url={shareUrl} subject={title}>
+          <EmailIcon size={46} round={true} />
+        </EmailShareButton>
+        </div>
         </div>
       )}
     </div>
@@ -59,7 +52,7 @@ const DownloadButton = ({ imageUrl }) => {
 
   return (
     <button
-      className="w-full bg-amber-300 text-black py-2 px-4 rounded-md hover:bg-amber-500"
+      className="bg-amber-300 text-black py-2 px-4 rounded-md hover:bg-amber-500"
       onClick={downloadImage}
     >
       Download

@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="flex flex-col items-center justify-center">
 <div class="siteIntro ">
-  <div class="titleBox" data-aos="fade-up">
+  <div class="titleBox">
     <div class="siteTitle p-8">
     <img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="mb-4 m-auto w-64" />
       <h1 className="text-amber-300">HOLIDAY SWEATER</h1>
@@ -28,6 +28,10 @@ const Header = () => {
                 <use href="#s-text" class="letter"></use>
               </g>
             </svg>
+
+            <h2 className="text-lg md:text-xl md:mx-5 mt-3 text-white text-center mb-3">
+          Get into the holiday spirit and design your own festive food-themed sweaters with our magical generator.
+        </h2>
             <button className="bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto	"
               onClick={() => scrollToElement("imgGenerator")}
             >

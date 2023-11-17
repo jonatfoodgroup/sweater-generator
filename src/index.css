@@ -74,7 +74,7 @@ code {
     text-align:center;
     max-width:1000px;
     width:750px;
-    animation: fadeInFromRight 1s ease-in-out forwards;
+    animation: fadeInFromBottom 1s ease-in-out forwards;
 
   }
 
@@ -83,7 +83,8 @@ code {
     border:2px dashed #F8D647;
     min-height:100%;
   }
-  .whiteStitch {    border:2px dashed #fff;
+  .whiteStitch {    
+    border:2px dashed #fff;
   }
   
   svg {
@@ -146,7 +147,6 @@ code {
 
   button {
     padding:.75rem;
-    
     outline:none;
     border:none;
     margin:1em;
@@ -178,4 +178,47 @@ code {
       opacity: 1;
       transform: translateX(0);
     }
+  } 
+   @keyframes fadeInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(70px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
+.inlineTools {
+  width: 100%;
+  justify-content: space-around;
+  
+}
+
+.inlineTools button {
+  margin: 6px;
+}
+
+/* Modal.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-close {
+  margin-top: 10px;
+  cursor: pointer;
+}
