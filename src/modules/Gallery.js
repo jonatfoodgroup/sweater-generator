@@ -40,9 +40,9 @@ const Gallery = () => {
           className=" mx-auto  p-4 rounded-lg  mx-6 md:mx-20 text-white  bg-slate-800"
           style={{ maxWidth: 1600 }}
         >
-          <div className=" stitchedBorder whiteStitch">
+          <div className=" stitchedBorder whiteStitch pl-6 pr-6">
             <h2 className="text-4xl  mb-4 text-amber-300 text-center mt-6 mx-2 block">
-              Checkout the TFG Closet
+              Check out the TFG Closet
             </h2>
             <GalleryImages images={images} />
           </div>

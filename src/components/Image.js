@@ -14,7 +14,7 @@ const Image = ({ imageUrl, setSelectedImage }) => {
 
   return (
     <div
-      className="w-1/2 md:w-1/4 relative"
+      className="w-1/2 md:w-1/4 p-4 relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
