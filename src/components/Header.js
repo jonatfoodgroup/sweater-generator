@@ -32,7 +32,7 @@ const Header = () => {
             <h2 className="text-lg md:text-xl md:mx-5 mt-3 text-white text-center mb-3">
           Get into the holiday spirit and design your own festive food-themed sweaters with our magical generator.
         </h2>
-            <button className="bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto	"
+            <button className="text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto	"
               onClick={() => scrollToElement("imgGenerator")}
             >
               <img

@@ -94,7 +94,7 @@ function ImageGenerator({ addImage }) {
         rows="2" // Adjust the number of rows as needed
       />
       <button
-        className="w-auto bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400  font-bold flex items-center m-auto"
+        className="w-auto  text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto"
         onClick={handleGenerateImages}
       >
         {isLoading ? (

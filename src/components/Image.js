@@ -26,7 +26,7 @@ const Image = ({ imageUrl, setSelectedImage }) => {
 
       {hovered && (
         <div className="absolute  bottom-0 left-0 p-4 mt-1 w-full">
-          <div className="inlineTools inline-flex items-center bg-slate-900 p-4 rounded-b-md bg-opacity-80">
+          <div className="inlineTools md:inline-flex items-center bg-slate-900 p-4 rounded-b-md bg-opacity-80">
             <DownloadButton className=" text-white  font-bold cursor-pointer" imageUrl={imageUrl} />
             <FacebookShareButton url={shareUrl} quote={title}>
               <FacebookIcon size={46} round={true} />
