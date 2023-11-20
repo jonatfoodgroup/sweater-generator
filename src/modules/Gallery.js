@@ -56,7 +56,7 @@ const GalleryImages = ({ images }) => {
   return (
     <div className="container mx-auto flex flex-wrap justify-center py-8">
       {images.map((imageUrl, index) => (
-        <Image imageUrl={imageUrl} key={index} />
+      <Image imageUrl={imageUrl} key={index} />
       ))}
     </div>
   );
