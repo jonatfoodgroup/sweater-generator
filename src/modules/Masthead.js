@@ -2,7 +2,7 @@ import React from "react";
 import ImageGenerator from "./ImageGenerator";
 import DonationCard from "../modules/DonationCard";
 import ImageTiles from "../modules/ImageTiles";
-
+import DemoGallery from "../components/Swiper";
 const Masthead = () => {
   const [generatedImages, setGeneratedImages] = React.useState([]);
 
@@ -36,6 +36,7 @@ const Masthead = () => {
                   <h2 className="text-2xl text-white text-center md:mx-12 mb-3">
                     Some delicious sweaters from our closet
                   </h2>
+                new gallery here<br/> 
                   <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
                     {/* just for positioning */}
                     <img
