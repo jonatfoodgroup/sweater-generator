@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { addGalleryItem } from "../firebase/firebaseConfig";
-import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-
+import { db } from "../firebase/firebaseConfig";
+import { onValue, ref } from "firebase/database";
 const apiKey = process.env.REACT_APP_OPENAI_API_KEY || "";
 
 const apiRoute = "https://api.openai.com/v1/images/generations";
@@ -12,6 +11,16 @@ function ImageGenerator({ addImage }) {
   const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImages, setGeneratedImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [prompt, setPrompt] = useState("");
+
+  useEffect(() => {
+    // getPrompt
+    const promptRef = ref(db, "prompt");
+    onValue(promptRef, (snapshot) => {
+      const prompt = snapshot.val();
+      setPrompt(prompt);
+    })
+  }, []);
 
   const handleGenerateImages = async () => {
     setIsLoading(true);
@@ -32,8 +41,7 @@ function ImageGenerator({ addImage }) {
       promptToUse = customPrompt;
     }
 
-    let tfgRecos =
-      "A super cool sweatshirt made out of food to showcase how AI interprets. Should be in photoshoot style";
+    let tfgRecos = prompt;
     promptToUse = promptToUse + tfgRecos;
     
     // Make a POST request to the OpenAI API

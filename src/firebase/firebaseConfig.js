@@ -98,3 +98,15 @@ export const deleteImage = async (imageUrl) => {
     console.error("Error deleting image:", error);
   }
 }
+
+export const getPrompt = async () => {
+  const dbRef = ref(db, "prompt");
+  const snapshot = await get(dbRef);
+  const data = snapshot.val();
+  return data;
+}
+
+export const setPrompt = async (prompt) => {
+  const dbRef = ref(db, "prompt");
+  await set(dbRef, prompt);
+}
