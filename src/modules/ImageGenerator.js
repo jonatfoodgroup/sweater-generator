@@ -85,7 +85,7 @@ function ImageGenerator({ addImage }) {
 
   return (
     <div className="container px-5 mt-10 mx-auto">
-      <h2 className="text-2xl mb-4 text-center">Enter your prompt below</h2>
+      <h2 className="text-xl md:text-2xl mb-4 text-center">Enter your prompt below</h2>
       <textarea
         className="w-full p-3 text-black border-2 border-amber-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-2"
         placeholder="Describe your design"
@@ -94,7 +94,7 @@ function ImageGenerator({ addImage }) {
         rows="2" // Adjust the number of rows as needed
       />
       <button
-        className="w-auto bg-amber-300 text-black py-3 px-6 text-xl rounded-md hover:bg-amber-400  font-bold flex items-center m-auto"
+        className="w-auto  text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto"
         onClick={handleGenerateImages}
       >
         {isLoading ? (
@@ -106,9 +106,14 @@ function ImageGenerator({ addImage }) {
         )}
       </button>
       (to-do add sample prompts)
-      <button className="border-1  py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black">
+
+
+      <button className="border-1  py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black" >
         Generate a sweater with a pizza pattern.
       </button>
+
+
+
       <button className="border-1 py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black">
         Create a sweater with a sushi design.
       </button>
