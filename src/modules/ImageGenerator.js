@@ -88,7 +88,7 @@ function ImageGenerator({ addImage }) {
       <h2 className="text-xl md:text-2xl mb-4 text-center">Enter your prompt below</h2>
       <textarea
         className="w-full p-3 text-black border-2 border-amber-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-2"
-        placeholder="Describe your design"
+        placeholder="Infuse your ingredients"
         value={customPrompt}
         onChange={(e) => setCustomPrompt(e.target.value)}
         rows="2" // Adjust the number of rows as needed
@@ -102,23 +102,24 @@ function ImageGenerator({ addImage }) {
         ) : generatedImages.length > 0 ? (
           "Regenerate"
         ) : (
-          "Make My Sweater"
+          "Knit My Sweater"
         )}
       </button>
-      (to-do add sample prompts)
+      Some Ways To Start:
 
 
       <button className="border-1  py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black" >
-        Generate a sweater with a pizza pattern.
+      Create a sweater with fully loaded hotdog (no ketchup) 
+
       </button>
 
 
 
       <button className="border-1 py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black">
-        Create a sweater with a sushi design.
+      Make a holiday sweater out of candy canes and gumdrops 
       </button>
       <button className="border-1 py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black">
-        Design a sweater featuring burgers and fries.
+      Design a festive sweater onesie out of sushi 
       </button>
     </div>
   );
