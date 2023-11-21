@@ -33,7 +33,7 @@ function ImageGenerator({ addImage }) {
     }
 
     let tfgRecos =
-      "A super cool sweatshirt made out of food to showcase how AI interprets. Should be in photoshoot style";
+      "a knit sweater with holiday theme or design, made out of real food, without any people or mannequin";
     promptToUse = promptToUse + tfgRecos;
     
     // Make a POST request to the OpenAI API
