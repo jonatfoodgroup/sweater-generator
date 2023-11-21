@@ -5,11 +5,17 @@ import {
   EmailIcon,
   EmailShareButton,
 } from "react-share";
+import { deleteImage } from "../firebase/firebaseConfig";
 
 const Image = ({ imageUrl, setSelectedImage }) => {
   const [hovered, setHovered] = useState(false);
   const shareUrl = window.location.href; // Replace with your own URL
   const title = "The Food Group Holiday Sweater Generator"; // Replace with your own title
+  const isAdmin = localStorage.getItem("isAdmin") || false;
+
+  const handleDelete = async (imageUrl) => {
+    await deleteImage(imageUrl);
+  }
 
   return (
     <div
@@ -34,6 +40,14 @@ const Image = ({ imageUrl, setSelectedImage }) => {
             <EmailShareButton url={shareUrl} subject={title}>
               <EmailIcon size={46} round={true} />
             </EmailShareButton>
+            {isAdmin && (
+              <button
+                className="bg-red-300 text-black py-2 px-4 rounded-md hover:bg-red-500"
+                onClick={() => handleDelete(imageUrl)}
+              >
+                Delete
+              </button>
+            )}
           </div>
         </div>
       )}
@@ -65,5 +79,7 @@ const DownloadButton = ({ imageUrl }) => {
     </button>
   );
 };
+
+
 
 export default Image;
