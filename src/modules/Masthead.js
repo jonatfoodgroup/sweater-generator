@@ -15,12 +15,12 @@ const Masthead = () => {
         className=" bg-black mx-auto  p-4 bg-black rounded-lg text-white "
         style={{ maxWidth: 980 }}
       >
-        <div className="flex stitchedBorder p-8">
-          <div className="w-1/2 text-white mr-4">
+        <div className="sm:flex stitchedBorder p-2 sm:p-8">
+          <div className="sm:w-1/2 text-white mr-4">
             <ImageGenerator addImage={addImage} />
           </div>
 
-          <div className="w-1/2  text-white">
+          <div className="sm:w-1/2  text-white">
             <div className="flex flex-wrap justify-center">
               {generatedImages.length > 0 && (
                 <div className="w-full">
