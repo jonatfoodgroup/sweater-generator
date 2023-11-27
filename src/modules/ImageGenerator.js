@@ -106,22 +106,23 @@ function ImageGenerator({ addImage }) {
           "Knit My Sweater"
         )}
       </button>
-      Some Ways To Start:
+     
+     
+     <div className="mt-5">
+     <p><strong>Some Ways To Start:</strong></p>
+      <ul className="samplePrompts">
+      <li>Create a sweater with fully loaded hotdog (no ketchup) </li>
+      <li>Make a holiday sweater out of candy canes and gumdrops </li>
+      <li>Design a festive sweater onesie out of sushi </li>
+
+      </ul>
+      </div> 
+      
+
+   
 
 
-      <button className="border-1  py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black" >
-      Create a sweater with fully loaded hotdog (no ketchup) 
 
-      </button>
-
-
-
-      <button className="border-1 py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black">
-      Make a holiday sweater out of candy canes and gumdrops 
-      </button>
-      <button className="border-1 py-2 m-1 border-solid border-amber-400 text-sm rounded-md text-white m-0 w-full bg-black">
-      Design a festive sweater onesie out of sushi 
-      </button>
     </div>
   );
 }
