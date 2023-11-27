@@ -239,3 +239,11 @@ code {
   height: 100%;
   object-fit: cover;
 }
+.samplePrompts {
+  list-style-type: square;
+    margin-left: 1rem;
+    margin-right: 4em;
+}
+.samplePrompts li {
+  margin:1em;
+}
