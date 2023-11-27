@@ -16,6 +16,11 @@ const Footer = () => {
 
           backgroundPosition: "top center",
         }}>
+
+<img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="mb-4 m-auto w-64" />
+
+<img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="mb-4 m-auto w-64" />
+
         <h2 className="text-2xl md:text-5xl max-w-2xl  mx-auto mb-3"
           style={{ color: "#859123" }}>
          We Hope Your Holiday Sweater Has You in Stitches</h2>
@@ -24,7 +29,7 @@ const Footer = () => {
           <p>But in all seriousness, it’s the season of giving! That’s why for every sweater you submit The Food Group will donate 10 meals to feeding America.</p>
           <p className="mb-4 mt-4 font-bold">CHECK OUT OUR PROGRESS</p>
         </div>
-        <div className ="ProgressBarWrapper  max-w-4xl mx-auto p-6" >
+        <div className =" max-w-4xl mx-auto p-6" >
         <MealsProgressBar />
         </div> 
       </div>
