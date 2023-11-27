@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useState } from "react";
 import Header from "./components/Header";
+import PersonalizeButton from "./modules/AvatarUploader";
 import Masthead from "./modules/Masthead";
 import Gallery from "./modules/Gallery";
 import Footer from "./modules/Footer";

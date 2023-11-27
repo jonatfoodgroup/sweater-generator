@@ -5,6 +5,7 @@ import {
   EmailIcon,
   EmailShareButton,
 } from "react-share";
+import PersonalizeButton from "../modules/AvatarUploader";
 
 const Image = ({ imageUrl, setSelectedImage }) => {
   const [hovered, setHovered] = useState(false);
@@ -34,6 +35,7 @@ const Image = ({ imageUrl, setSelectedImage }) => {
             <EmailShareButton url={shareUrl} subject={title}>
               <EmailIcon size={46} round={true} />
             </EmailShareButton>
+            <PersonalizeButton imageUrl={imageUrl} />
           </div>
         </div>
       )}
