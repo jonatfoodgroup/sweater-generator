@@ -33,13 +33,13 @@ const Header = () => {
             Get into the holiday spirit by designing your own festive food-themed sweaters.
 
         </h2>
-            <button className="text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto	"
+            <button className="knittingAnimateSpan text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto pb-2	"
               onClick={() => scrollToElement("imgGenerator")}
             >
               <img
                 src={process.env.PUBLIC_URL + "/images/knittingicon.png"}
                 alt="The Food Group Logo"
-                className="w-10"
+                className="w-10 mb-2 mr-2 knittingAnimate"
               />
               Start Knitting
             </button>

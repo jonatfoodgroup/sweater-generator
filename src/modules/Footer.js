@@ -13,7 +13,7 @@ const Footer = () => {
           backgroundImage: `url(${process.env.PUBLIC_URL + '/images/back-stitched.jpg'
             })`,
           backgroundRepeat: "repeat",
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "center",
         }}>
 

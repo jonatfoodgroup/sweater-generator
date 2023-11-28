@@ -34,6 +34,7 @@ const Gallery = () => {
 
           backgroundPosition: "center center",
           backgroundSize: "cover",
+          backgroundAttachment: "fixed",
         }}
       >
         <div
