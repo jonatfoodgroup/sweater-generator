@@ -51,8 +51,6 @@ code {
     height: 100vh;
     width: 100%;
     animation: fadeIn 3s;
-
-
   }
 
   h1 {
@@ -77,9 +75,9 @@ code {
     border-radius:18px;
     text-align:center;
     max-width:1000px;
-    width:750px;
+   /* width:750px;*/
     animation: fadeInFromBottom 1s ease-in-out forwards;
-
+z-index:99999;
   }
 
   .siteTitle, .stitchedBorder {
@@ -247,7 +245,6 @@ code {
 .samplePrompts li {
   margin:1em;
 }
-
 /* swiper */
 
 .swiper {
@@ -322,4 +319,109 @@ p.swiper-caption {
     max-width: 100%;
   }
   
+}
+  
+/*let it snow */
+.snowfall-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.snowflake {
+  color: #012A7C;
+  font-size: 10em;
+  font-family: Arial, sans-serif;
+ /*text-shadow: 0 0 5px #000;*/
+  position: absolute;
+  z-index: 9999;
+  user-select: none;
+  cursor: default;
+  animation-name: snowflakes-fall, snowflakes-shake, spin;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+  top:-300px;
+}
+
+
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes snowflakes-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+}
+
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  animation-delay: 1s, 1s;
+  
+}
+
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  animation-delay: 6s, 0.5s;
+}
+
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  animation-delay: 2s, 2s;
+}
+
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  animation-delay: 8s, 3s;
+}
+
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  animation-delay: 6s, 2s;
+}
+
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  animation-delay: 2.5s, 1s;
+}
+
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  animation-delay: 1s, 0s;
+}
+
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  animation-delay: 3s, 1.5s;
+}
+
+.snowflake:nth-of-type(10) {
+  left: 25%;
+  animation-delay: 2s, 0s;
+}
+
+.snowflake:nth-of-type(11) {
+  left: 65%;
+  animation-delay: 4s, 2.5s;
+}
+
+
+
+@keyframes spin {
+  0%  {-webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}   
 }

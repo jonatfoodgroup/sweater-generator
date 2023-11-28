@@ -94,10 +94,9 @@ function ImageGenerator({ addImage }) {
         onChange={(e) => setCustomPrompt(e.target.value)}
         rows="2" // Adjust the number of rows as needed
       />
-      <button
+  <button
         className="w-auto  text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto"
-        onClick={handleGenerateImages}
-      >
+        onClick={handleGenerateImages}>
         {isLoading ? (
           <Loadericon isActive={isLoading} />
         ) : generatedImages.length > 0 ? (
@@ -108,21 +107,6 @@ function ImageGenerator({ addImage }) {
       </button>
      
       <DonationCard />
-     {/* <div className="mt-5">
-     <p><strong>Some Ways To Start:</strong></p>
-      <ul className="samplePrompts">
-      <li>Create a sweater with fully loaded hotdog (no ketchup) </li>
-      <li>Make a holiday sweater out of candy canes and gumdrops </li>
-      <li>Design a festive sweater onesie out of sushi </li>
-
-      </ul>
-      </div>  */}
-      
-
-   
-
-
-
     </div>
   );
 }

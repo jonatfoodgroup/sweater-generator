@@ -7,19 +7,19 @@ import ProgressBar from "@ramonak/react-progress-bar";
     console.log('Render ProgressBar');
     return (
       <ProgressBar
-      completed={800}
-      height="54px"
+      completed={250}
+      height="46px"
       labelColor="#ffffff"
       padding="0px"
-      baseBgColor="#2A3844"
+      baseBgColor="#1e293b"
       bgColor="#859123"
       initCompletedOnAnimation="0"
-      labelSize="23px"
+      labelSize="20px"
       transitionDuration="5s"
       animateOnRender
       className="mt-4"
-      maxCompleted={1000}
-      customLabel=" 800 meals"
+      maxCompleted={1200}
+      customLabel="250 &nbsp;"
       />
       
     );
