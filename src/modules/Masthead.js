@@ -31,7 +31,7 @@ const Masthead = () => {
             <div className="flex flex-wrap justify-center">
               {generatedImages.length > 0 && (
                 <div className="w-full">
-                  <h2 className="text-3xl text-white text-center">
+                  <h2 className="text-xl md:text-2xl mb-4 text-center">
 Feast your eyes on your delicious design 
                   </h2>
                   <ImageTiles images={generatedImages} />
@@ -40,9 +40,6 @@ Feast your eyes on your delicious design
               )}
               {generatedImages.length === 0 && (
                 <div className="w-full">
-                  <h2 className="text-2xl text-white text-center md:mx-12 mb-3">
-                    Some delicious sweaters from our closet
-                  </h2>
                   <SwiperCarousel images={imagesCarousel} />
                   
                 </div>

@@ -3,7 +3,7 @@ import React from "react";
 const DonationCard = () => {
 
 return (
-<div className="DonationCard max-w-lg  mx-auto mt-4 rounded-md overflow-hidden  bg-slate-800">
+<div className="DonationCard max-w-lg  mx-auto mt-6 rounded-md overflow-hidden  bg-slate-800">
 <div className="flex items-center p-4">
   {/* Circular Avatar Image */}
   <div className="rounded-full h-12 w-12 flex-shrink-0 bg-white overflow-hidden">
