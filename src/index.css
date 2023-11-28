@@ -428,6 +428,15 @@ button {
 }
 
 .inlineTools.addToGallery button {
+  padding:.75rem !important;
+  outline:none !important;
+  border:none !important;
+  margin:1em;
+  font-size:1rem !important;
+  font-variation-settings: "CNST" 100, "wght" 700 !important;
+  font-family: "sway-variable", sans-serif !important;
+  background-color: rgb(252 211 77) !important;
   margin: 0;
   margin-top: -10px;
+  
 }

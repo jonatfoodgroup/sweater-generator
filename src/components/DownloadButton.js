@@ -12,7 +12,7 @@ const DownloadButton = ({
   
   return (
     <button
-      className=" bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+      className=" bg-blue-500 text-white py-2 px-4 pb-2 rounded-md hover:bg-blue-600"
       onClick={() => handleDownloadImage(imageUrl)}
     >
       <ArrowDownTrayIcon className="inline-block mr-2 h-5 w-5" />

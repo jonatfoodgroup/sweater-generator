@@ -42,7 +42,7 @@ const Footer = () => {
 <div className="h-full">
         <h3 className="md:max-w-2xl mx-auto mb-4 text-xl md:text-3xl text-white"> If you like this (or want your own sweater) give us a ring.</h3>
         <p className="text-lg md:max-w-2xl mx-auto mb-4 text-white">We’d love to show how our culinary expertise and creativity can help you and your business.</p>
-        <a href="https://thefoodgroup.com/contact-us/" target="_blank" className="text-lg transition-colors duration-300 bg-amber-300 hover:bg-amber-400 p-3 m-3 font-bold display: inline-block">Lets Talk</a>
+        <a href="https://thefoodgroup.com/contact-us/" target="_blank" className="rounded-md text-lg transition-colors duration-300 bg-amber-300 hover:bg-amber-400 p-3 m-3 pb-2 font-bold display: inline-block">Lets Talk</a>
       </div>
       </div></>
   )
