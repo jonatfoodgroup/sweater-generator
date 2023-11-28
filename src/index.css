@@ -245,7 +245,82 @@ z-index:99999;
 .samplePrompts li {
   margin:1em;
 }
+/* swiper */
 
+.swiper {
+  height: auto !important;
+  background: white;
+  padding: 1rem !important;
+}
+
+.swiper-slide {
+  background: white !important;
+}
+
+.swiper-slide img {
+  padding: 0rem;
+    background: white;
+    /* height: 350px; */
+    width: auto;
+    margin: 0 auto;
+}
+
+p.swiper-caption {
+  padding-top: 1rem;
+  background: white;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: white !important;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+  right: 20px !important;
+  left: auto !important; 
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  left: 20px !important;
+  right: auto !important; 
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 0;
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+.inlineTools.addToGallery button {
+  margin: 0;
+  margin-top: -10px;
+}
+
+#generator .inner-container {
+  max-width: 980px;
+}
+
+@media screen and (max-width: 480px) {
+  #generator .inner-container {
+    max-width: 100%;
+  }
+  
+}
+  
 /*let it snow */
 .snowfall-container {
   position: relative;

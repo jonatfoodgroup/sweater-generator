@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { addGalleryItem } from "../firebase/firebaseConfig";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+import DonationCard from "../modules/DonationCard";
 
 const apiKey = process.env.REACT_APP_OPENAI_API_KEY || "";
 
@@ -69,7 +70,7 @@ function ImageGenerator({ addImage }) {
       addImage(imageBlob);
 
       // Add the base64 image to the generated images array
-      setGeneratedImages((prevImages) => [...prevImages, imageBlob]);
+      setGeneratedImages((prevImages) => imageBlob);
 
         // Add a delay to prevent hitting the API rate limit
         await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -93,10 +94,9 @@ function ImageGenerator({ addImage }) {
         onChange={(e) => setCustomPrompt(e.target.value)}
         rows="2" // Adjust the number of rows as needed
       />
-      <button
+  <button
         className="w-auto  text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto"
-        onClick={handleGenerateImages}
-      >
+        onClick={handleGenerateImages}>
         {isLoading ? (
           <Loadericon isActive={isLoading} />
         ) : generatedImages.length > 0 ? (
@@ -106,16 +106,7 @@ function ImageGenerator({ addImage }) {
         )}
       </button>
      
-     
-     <div className="mt-5">
-    
-      </div> 
-      
-
-   
-
-
-
+      <DonationCard />
     </div>
   );
 }
