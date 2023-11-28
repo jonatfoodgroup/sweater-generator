@@ -420,7 +420,7 @@ button {
   font-size:1rem;
   font-variation-settings: "CNST" 100, "wght" 700;
   font-family: "sway-variable", sans-serif;
-  background-color: rgb(252 211 77);
+  /* background-color: rgb(252 211 77); */
 }
 
 .inlineTools button {
@@ -434,7 +434,6 @@ button {
   font-size:1rem !important;
   font-variation-settings: "CNST" 100, "wght" 700 !important;
   font-family: "sway-variable", sans-serif !important;
-  /* background-color: rgb(252 211 77); */
   margin: 0;
   margin-top: -10px;
   
