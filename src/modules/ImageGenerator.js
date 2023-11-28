@@ -4,7 +4,7 @@ import { addGalleryItem } from "../firebase/firebaseConfig";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import DonationCard from "../modules/DonationCard";
 
-const apiKey = process.env.REACT_APP_OPENAI_API_KEY || "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";
+const apiKey = process.env.REACT_APP_OPENAI_API_KEY || "";
 
 const apiRoute = "https://api.openai.com/v1/images/generations";
 
