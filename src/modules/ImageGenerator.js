@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { addGalleryItem } from "../firebase/firebaseConfig";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+import DonationCard from "../modules/DonationCard";
 
-const apiKey = process.env.REACT_APP_OPENAI_API_KEY || "";
+const apiKey = process.env.REACT_APP_OPENAI_API_KEY || "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";
 
 const apiRoute = "https://api.openai.com/v1/images/generations";
 
@@ -69,7 +70,7 @@ function ImageGenerator({ addImage }) {
       addImage(imageBlob);
 
       // Add the base64 image to the generated images array
-      setGeneratedImages((prevImages) => [...prevImages, imageBlob]);
+      setGeneratedImages((prevImages) => imageBlob);
 
         // Add a delay to prevent hitting the API rate limit
         await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -106,8 +107,8 @@ function ImageGenerator({ addImage }) {
         )}
       </button>
      
-     
-     <div className="mt-5">
+      <DonationCard />
+     {/* <div className="mt-5">
      <p><strong>Some Ways To Start:</strong></p>
       <ul className="samplePrompts">
       <li>Create a sweater with fully loaded hotdog (no ketchup) </li>
@@ -115,7 +116,7 @@ function ImageGenerator({ addImage }) {
       <li>Design a festive sweater onesie out of sushi </li>
 
       </ul>
-      </div> 
+      </div>  */}
       
 
    

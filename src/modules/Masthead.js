@@ -2,18 +2,25 @@ import React from "react";
 import ImageGenerator from "./ImageGenerator";
 import DonationCard from "../modules/DonationCard";
 import ImageTiles from "../modules/ImageTiles";
-import DemoGallery from "../components/Swiper";
+import Swiper from "../components/Swiper";
+import SwiperCarousel from "../components/Swiper";
 const Masthead = () => {
   const [generatedImages, setGeneratedImages] = React.useState([]);
 
   const addImage = (base64Image) => {
     setGeneratedImages((prevImages) => [...prevImages, base64Image]);
   };
+
+  const imagesCarousel = [
+    { id: 1, src: 'https://firebasestorage.googleapis.com/v0/b/sweater-generator.appspot.com/o/gallery%2Fmiso-soup-sweater.jpeg?alt=media&token=5bc96844-617f-4a6c-b3b7-ac3440f628ec', caption: 'clear holiday sweater filled with miso soup' },
+    { id: 2, src: 'https://firebasestorage.googleapis.com/v0/b/sweater-generator.appspot.com/o/gallery%2Fpickle-sweater.jpeg?alt=media&token=63ec5a8a-28d5-421a-b423-3782298c019f',  caption: 'holiday sweater made out of pickles' },
+    { id: 3, src: 'https://firebasestorage.googleapis.com/v0/b/sweater-generator.appspot.com/o/gallery%2Fsalad-sweater.jpeg?alt=media&token=dc6aa503-7437-4256-b04b-703f30bab981',  caption: 'salad holiday sweater' },
+  ];
+
   return (
     <div id="generator" className="h-full flex items-center">
       <div
-        className=" bg-black mx-auto  p-4 bg-black rounded-lg text-white "
-        style={{ maxWidth: 980 }}
+        className=" inner-container bg-black mx-auto  p-4 bg-black rounded-lg text-white "
       >
         <div className="sm:flex stitchedBorder p-2 sm:p-8">
           <div className="sm:w-1/2 text-white mr-4">
@@ -28,7 +35,7 @@ const Masthead = () => {
 Feast your eyes on your delicious design 
                   </h2>
                   <ImageTiles images={generatedImages} />
-                  <DonationCard />
+                  {/* <DonationCard /> */}
                 </div>
               )}
               {generatedImages.length === 0 && (
@@ -36,33 +43,18 @@ Feast your eyes on your delicious design
                   <h2 className="text-2xl text-white text-center md:mx-12 mb-3">
                     Some delicious sweaters from our closet
                   </h2>
-                new gallery here<br/> 
-                  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-4">
-                    {/* just for positioning */}
-                    <img
-                      src="https://firebasestorage.googleapis.com/v0/b/sweater-generator.appspot.com/o/gallery%2Fimg-QPYhEdHotJ2lW4oDzhBXaAUS.png?alt=media&token=1dada176-2bde-4dfc-98eb-e9159f2c279d"
-                      className="w-full h-full object-cover max-h-56	max-w-4xl rounded-lg"
-                    />
-                    <img
-                      src="https://firebasestorage.googleapis.com/v0/b/sweater-generator.appspot.com/o/gallery%2Fimg-QPYhEdHotJ2lW4oDzhBXaAUS.png?alt=media&token=1dada176-2bde-4dfc-98eb-e9159f2c279d"
-                      className="w-full h-full object-cover max-h-56	max-w-4xl rounded-lg"
-                    />
-                    <img
-                      src="https://firebasestorage.googleapis.com/v0/b/sweater-generator.appspot.com/o/gallery%2Fimg-QPYhEdHotJ2lW4oDzhBXaAUS.png?alt=media&token=1dada176-2bde-4dfc-98eb-e9159f2c279d"
-                      className="w-full h-full object-cover max-h-56	max-w-4xl rounded-lg"
-                    />
-                    <img
-                      src="https://firebasestorage.googleapis.com/v0/b/sweater-generator.appspot.com/o/gallery%2Fimg-QPYhEdHotJ2lW4oDzhBXaAUS.png?alt=media&token=1dada176-2bde-4dfc-98eb-e9159f2c279d"
-                      className="w-full h-full object-cover max-h-56	max-w-4xl rounded-lg"
-                    />
-                  </div>
-                  <DonationCard />
+                  <SwiperCarousel images={imagesCarousel} />
+                  
                 </div>
               )}
             </div>
+          
           </div>
+          
         </div>
+       
       </div>
+ 
     </div>
   );
 };
