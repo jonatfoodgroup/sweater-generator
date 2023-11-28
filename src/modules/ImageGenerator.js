@@ -108,13 +108,7 @@ function ImageGenerator({ addImage }) {
      
      
      <div className="mt-5">
-     <p><strong>Some Ways To Start:</strong></p>
-      <ul className="samplePrompts">
-      <li>Create a sweater with fully loaded hotdog (no ketchup) </li>
-      <li>Make a holiday sweater out of candy canes and gumdrops </li>
-      <li>Design a festive sweater onesie out of sushi </li>
-
-      </ul>
+    
       </div> 
       
 
