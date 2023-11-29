@@ -85,8 +85,8 @@ function ImageGenerator({ addImage }) {
   }
 
   return (
-    <div className="container px-5 mt-10 mx-auto">
-      <h2 className="text-xl md:text-2xl mb-4 text-center">Enter your prompt below</h2>
+    <div className="container px-5 mx-auto containerFlex">
+      <h2 className="text-xl md:text-2xl mb-4 text-center self-center">Enter your prompt below</h2>
       <textarea
         className="w-full p-3 text-black border-2 border-amber-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-2"
         placeholder="Infuse your ingredients"

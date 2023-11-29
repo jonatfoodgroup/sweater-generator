@@ -84,7 +84,8 @@ z-index:99999;
    border-radius:6px;
     border:2px dashed #F8D647;
     min-height:100%;
-    align-items: center;
+    /* align-items: center; */
+    align-items: stretch;
   }
   .whiteStitch {    
     border:2px dashed #fff !important;
@@ -474,3 +475,11 @@ button.knittingAnimateSpan:hover img {
   animation-name: bounce;
   -moz-animation-name: bounce;
 } 
+
+div.container.containerFlex {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: stretch;
+  justify-content: center;
+}

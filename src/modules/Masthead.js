@@ -22,7 +22,7 @@ const Masthead = () => {
       <div
         className=" inner-container mx-auto  p-4 bg-slate-800 rounded-lg text-white "
       >
-        <div className="sm:flex stitchedBorder p-2 sm:p-8">
+        <div className="sm:flex stitchedBorder whiteStitch p-2 sm:p-8">
           <div className="sm:w-1/2 text-white mr-4">
             <ImageGenerator addImage={addImage} />
           </div>
@@ -58,7 +58,7 @@ Feast your eyes on your delicious design
 
 const ContentBlock = () => {
   return (
-    <div className="container mx-auto px-5	 text-left">
+    <div className="container mx-auto px-5 text-left">
       <div className="mx-auto mt-20">
         <h2 className="text-lg md:text-2xl md:mx-5 text-white text-center mb-3">
           Get into the holiday spirit and design your own festive food-themed
