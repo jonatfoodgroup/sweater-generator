@@ -36,7 +36,7 @@ const Gallery = () => {
           style={{ maxWidth: 1600 }}
         >
           <div className=" stitchedBorder whiteStitch pl-6 pr-6">
-            <h2 className="text-4xl  mb-4 text-amber-300 text-center mt-6 mx-2 block">
+            <h2 className="text-4xl text-amber-300 text-center mt-8 mx-2 block">
               Check out the TFG Closet
             </h2>
             <GalleryImages images={images} />
@@ -49,7 +49,7 @@ const Gallery = () => {
 
 const GalleryImages = ({ images }) => {
   return (
-    <div className="container mx-auto flex flex-wrap justify-center py-8">
+    <div className="container mx-auto flex flex-wrap justify-center py-4">
       {images.map((imageUrl, index) => (
       <Image imageUrl={imageUrl} key={index} />
       ))}

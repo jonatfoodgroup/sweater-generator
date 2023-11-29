@@ -54,7 +54,7 @@ const Header = () => {
               <img
                 src={process.env.PUBLIC_URL + "/images/knittingicon.png"}
                 alt="The Food Group Logo"
-                className="w-10"
+                className="w-10 mb-2 mr-2 knittingAnimate"
               />
               Start Knitting
             </button>
