@@ -16,7 +16,7 @@ return (
 
   {/* Content on the Right */}
   <div className="mx-4 ">
-    <h3 className="text-amber-300">You Generate. We Donate.</h3>
+    <h3 className="bg-scroll-green">You Generate. We Donate.</h3>
     <p className="text-white">For every sweater added to our gallery, we’ll donate 10 meals to Feeding America! </p>
     
   </div>

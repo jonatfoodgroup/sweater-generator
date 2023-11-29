@@ -33,7 +33,7 @@ const Header = () => {
             Get into the holiday spirit by designing your own festive food-themed sweaters.
 
         </h2>
-            <button className="knittingAnimateSpan text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto pb-2	"
+            <button className="knittingAnimateSpan text-slate-800 py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto pb-2	"
               onClick={() => scrollToElement("imgGenerator")}
             >
               <img

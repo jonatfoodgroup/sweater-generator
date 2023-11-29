@@ -86,7 +86,7 @@ function ImageGenerator({ addImage }) {
 
   return (
     <div className="container px-5 mx-auto containerFlex">
-      <h2 className="text-xl md:text-2xl mb-4 text-center self-center">Enter your prompt below</h2>
+      <h2 className="text-amber-300 text-xl md:text-2xl mb-4 text-center self-center">Enter your prompt below</h2>
       <textarea
         className="w-full p-3 text-black border-2 border-amber-500 rounded-md text-lg placeholder-gray-400 focus:outline-none focus:border-blue-700 mb-2"
         placeholder="Infuse your ingredients"
@@ -95,7 +95,7 @@ function ImageGenerator({ addImage }) {
         rows="2" // Adjust the number of rows as needed
       />
   <button
-        className="w-auto text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto"
+        className="w-auto text-slate-800 py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto"
         onClick={handleGenerateImages}>
         {isLoading ? (
           <Loadericon isActive={isLoading} />

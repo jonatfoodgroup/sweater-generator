@@ -21,7 +21,7 @@ const ImageTiles = ({ images }) => {
           <Image file={images[images.length-1]} />
           <div className="relative bottom-0 left-0 w-full">
     <div className="inlineTools addToGallery md:inline-flex items-center bg-slate-900 rounded-b-md bg-opacity-80">
-      <button className="bg-amber-300 hover:bg-amber-400 transition-colors text-black rounded-b-md font-bold cursor-pointer w-full" onClick={() => handleAddToGallery(images[images.length-1])}>Add to gallery</button>
+      <button className="bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full" onClick={() => handleAddToGallery(images[images.length-1])}>Add to gallery</button>
     </div>
   </div>
           </div>

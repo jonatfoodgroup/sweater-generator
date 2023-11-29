@@ -20,14 +20,14 @@ const Footer = () => {
 
 
       <Snow/>
-      <div class="titleBox">
-        <div class="siteTitle p-8">
+      <div class="titleBox bg-slate-800">
+        <div class="siteTitle whiteStitch p-8">
         <h2 className="text-2xl md:text-5xl leading-6 max-w-2xl text-amber-300 mt-5  mx-auto mb-3">
          We Hope Your Holiday Sweater Has You in Stitches</h2>
 
         <div className="max-w-xl mx-auto md:text-lg">
           <h2 className="text-white">But in all seriousness, it’s the season of giving! That’s why for every sweater you submit The Food Group will donate 10 meals to Feeding America.</h2>
-          <p className="mb-4 mt-4 text-white font-bold" style={{ color: "#859123" }}>MEALS DONATED TO DATE:</p>
+          <p className="mb-4 mt-4 text-white font-bold" style={{ color: "#324564" }}>MEALS DONATED TO DATE:</p>
         </div>
 
         <div className =" max-w-4xl mx-auto " >
@@ -40,9 +40,9 @@ const Footer = () => {
       <div className=" mx-auto py-16 px-5 h-full w-full bg-slate-800	text-center">
 
 <div className="h-full">
-        <h3 className="md:max-w-2xl mx-auto mb-4 text-xl md:text-3xl text-white"> If you like this (or want your own sweater) give us a ring.</h3>
+        <h3 className="text-amber-300 md:max-w-2xl mx-auto mb-4 text-xl md:text-3xl"> If you like this (or want your own sweater) give us a ring.</h3>
         <p className="text-lg md:max-w-2xl mx-auto mb-4 text-white">We’d love to show how our culinary expertise and creativity can help you and your business.</p>
-        <a href="https://thefoodgroup.com/contact-us/" target="_blank" className="rounded-md text-lg transition-colors duration-300 bg-amber-300 hover:bg-amber-400 p-3 m-3 pb-2 font-bold display: inline-block">Lets Talk</a>
+        <a href="https://thefoodgroup.com/contact-us/" target="_blank" className="rounded-md text-slate-800 text-lg transition-colors duration-300 bg-amber-300 hover:bg-amber-400 p-3 m-3 pb-2 font-bold display: inline-block">Lets Talk</a>
       </div>
       </div></>
   )

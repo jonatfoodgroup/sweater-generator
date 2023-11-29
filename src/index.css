@@ -419,8 +419,8 @@ button {
   border:none;
   margin:1em;
   font-size:1rem;
-  font-variation-settings: "CNST" 100, "wght" 700;
-  font-family: "sway-variable", sans-serif;
+  font-variation-settings: "CNST" 100, "wght" 600;
+  font-family: cardigan, sans-serif;
   /* background-color: rgb(252 211 77); */
 }
 
@@ -433,8 +433,8 @@ button {
   outline:none !important;
   border:none !important;
   font-size:1rem !important;
-  font-variation-settings: "CNST" 100, "wght" 700 !important;
-  font-family: "sway-variable", sans-serif !important;
+  font-variation-settings: "CNST" 100, "wght" 600 !important;
+  font-family: cardigan, sans-serif !important;
   margin: 0;
   margin-top: -10px;
   
@@ -482,4 +482,8 @@ div.container.containerFlex {
   height: 100%;
   align-items: stretch;
   justify-content: center;
+}
+
+.bg-scroll-green {
+  color: rgb(133, 145, 35);
 }
