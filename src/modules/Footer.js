@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="h-full mx-auto py-20 px-5	text-center bg-white min-h-screen flex flex-col items-center justify-center snowfall-container"
         style={{
           // add backgroundImage from public folder:
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/images/back-stitched.jpg'
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/images/footer-background.jpg'
             })`,
           backgroundRepeat: "repeat",
           backgroundSize: "contain",
@@ -20,7 +20,7 @@ const Footer = () => {
 
 
       <Snow/>
-      <div class="titleBox">
+      <div class="titleBox bg-slate-800">
         <div class="siteTitle p-8">
         <h2 className="text-2xl md:text-5xl leading-6 max-w-2xl text-amber-300 mt-5  mx-auto mb-3">
          We Hope Your Holiday Sweater Has You in Stitches</h2>
@@ -37,7 +37,7 @@ const Footer = () => {
       </div>
       </div>
 
-      <div className=" mx-auto py-16 px-5 h-full w-full bg-slate-800	text-center">
+      <div className=" mx-auto py-16 px-5 h-full w-full 	text-center">
 
 <div className="h-full">
         <h3 className="md:max-w-2xl mx-auto mb-4 text-xl md:text-3xl text-white"> If you like this (or want your own sweater) give us a ring.</h3>

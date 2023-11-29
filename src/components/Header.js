@@ -28,7 +28,7 @@ const Header = () => {
 
 
 
-  <div className="titleBox bg-slate-900 m-8 ">
+  <div className="titleBox bg-slate-800 m-8 ">
     <div class="siteTitle p-8">
     <img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="mb-4 m-auto w-64" />
       <h1 className="text-amber-300 text-2xl mt-5 md:text-5xl">HOLIDAY SWEATER</h1>
