@@ -25,7 +25,7 @@ export default function SwiperCarousel({ images }) {
     }
         
         modules={[Autoplay, Navigation]}
-        className="mySwiper w-full p-3 text-black border-2 border-amber-500 rounded-md"
+        className="mySwiper w-full p-3 text-black border-2 rounded-md"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>

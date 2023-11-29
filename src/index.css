@@ -87,7 +87,7 @@ z-index:99999;
     align-items: center;
   }
   .whiteStitch {    
-    border:2px dashed #fff;
+    border:2px dashed #fff !important;
   }
   
   svg {
