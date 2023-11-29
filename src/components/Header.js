@@ -10,8 +10,25 @@ const Header = () => {
   };
   return (
     <header className="flex flex-col items-center justify-center">
-<div class="siteIntro ">
-  <div className="titleBox bg-slate-900 ">
+
+
+<div
+        className="siteIntro pt-10 pb-10"
+        style={{
+          // add backgroundImage from public folder:
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "/images/header-background.jpg"
+          })`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+        }}
+      >
+
+
+
+
+  <div className="titleBox bg-slate-900 m-8 ">
     <div class="siteTitle p-8">
     <img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="mb-4 m-auto w-64" />
       <h1 className="text-amber-300 text-2xl mt-5 md:text-5xl">HOLIDAY SWEATER</h1>

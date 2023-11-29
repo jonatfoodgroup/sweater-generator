@@ -12,7 +12,7 @@ const Masthead = () => {
   return (
     <div id="generator" className="h-full flex items-center">
       <div
-        className=" bg-black mx-auto  p-4 bg-black rounded-lg text-white "
+        className=" bg-slate-800 mx-auto  p-4 rounded-lg text-white "
         style={{ maxWidth: 980 }}
       >
         <div className="sm:flex stitchedBorder p-2 sm:p-8">
