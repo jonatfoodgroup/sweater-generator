@@ -58,7 +58,7 @@ const DownloadButton = ({ imageUrl }) => {
 
   return (
     <button
-      className="bg-amber-300 text-black py-2 px-4 rounded-md hover:bg-amber-500"
+      className="bg-amber-300 text-slate-800 py-2 px-4 rounded-md hover:bg-amber-500"
       onClick={downloadImage}
     >
       Download

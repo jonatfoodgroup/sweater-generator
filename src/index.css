@@ -65,6 +65,7 @@ code {
   }
 
   .titleBox {
+    /* background-color:black; */
    /* min-height:45vh;*/
     display:block;
     padding: 1rem;
@@ -80,9 +81,11 @@ code {
    border-radius:6px;
   border:2px dashed #fff;
     min-height:100%;
+    /* align-items: center; */
+    align-items: stretch;
   }
   .whiteStitch {    
-    border:2px dashed #fff;
+    border:2px dashed #fff !important;
   }
   
   svg {
@@ -143,18 +146,6 @@ code {
   }
 
 
-  button {
-    padding:.75rem;
-    outline:none;
-    border:none;
-    margin:1em;
-    font-size:1rem;
-    font-variation-settings: "CNST" 100, "wght" 700;
-    font-family: "sway-variable", sans-serif;
-    background-color: rgb(252 211 77);
-  }
-
-
   .DonationCard{
     animation: fadeInFromRight 1s ease-in-out forwards;
   }
@@ -191,10 +182,6 @@ code {
   width: 100%;
   justify-content: space-around;
   
-}
-
-.inlineTools button {
-  margin: 6px;
 }
 
 .ProgressBarWrapper {
@@ -241,7 +228,82 @@ code {
 .samplePrompts li {
   margin:1em;
 }
+/* swiper */
 
+.swiper {
+  height: auto !important;
+  background: white;
+  padding: 1rem !important;
+}
+
+.swiper-slide {
+  background: white !important;
+}
+
+.swiper-slide img {
+  padding: 0rem;
+    background: white;
+    /* height: 350px; */
+    width: auto;
+    margin: 0 auto;
+}
+
+p.swiper-caption {
+  padding-top: 1rem;
+  background: white;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: white !important;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+  right: 20px !important;
+  left: auto !important; 
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  left: 20px !important;
+  right: auto !important; 
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 0;
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+#generator .inner-container {
+  max-width: 980px;
+}
+
+@media screen and (max-width: 480px) {
+  #generator .inner-container {
+    max-width: 100%;
+  }
+
+  .container.block-1 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+  
+}
+  
 /*let it snow */
 .snowfall-container {
   position: relative;
@@ -345,4 +407,80 @@ code {
 @keyframes spin {
   0%  {-webkit-transform: rotate(0deg);}
   100% {-webkit-transform: rotate(360deg);}   
+}
+
+
+button {
+  padding:.75rem;
+  outline:none;
+  border:none;
+  margin:1em;
+  font-size:1rem;
+  font-variation-settings: "CNST" 100, "wght" 600;
+  font-family: cardigan, sans-serif;
+  /* background-color: rgb(252 211 77); */
+}
+
+.inlineTools button {
+  margin: 6px;
+}
+
+.inlineTools.addToGallery button {
+  padding:.75rem !important;
+  outline:none !important;
+  border:none !important;
+  font-size:1rem !important;
+  font-variation-settings: "CNST" 100, "wght" 600 !important;
+  font-family: cardigan, sans-serif !important;
+  margin: 0;
+  margin-top: -10px;
+  
+}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+
+button.knittingAnimateSpan img {
+  -webkit-animation-duration: 1.15s;
+  animation-duration: 1.15s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+
+button.knittingAnimateSpan:hover img {
+  cursor: pointer;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
+} 
+
+div.container.containerFlex {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.bg-scroll-green {
+  color: rgb(133, 145, 35);
 }

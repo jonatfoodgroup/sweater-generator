@@ -25,11 +25,11 @@ const Header = () => {
         }}
       >
 
-
-
-
   <div className="titleBox bg-slate-800 m-8 ">
     <div class="siteTitle p-8">
+<div class="siteIntro ">
+  <div class="titleBox bg-slate-800">
+    <div class="siteTitle whiteStitch p-8">
     <img src={process.env.PUBLIC_URL + '/images/tfg-dot-logo.png'} alt="The Food Group Logo" className="mb-4 m-auto w-64" />
       <h1 className="text-amber-300 text-2xl mt-5 md:text-5xl">HOLIDAY SWEATER</h1>
       <svg viewBox="0 0 880 140">
@@ -45,16 +45,20 @@ const Header = () => {
                 <use href="#s-text" class="letter"></use>
               </g>
             </svg>
-
             <p className="text-lg md:text-xl md:mx-5 mt-3 text-white text-center mb-3">
             Get into the holiday spirit by designing your own festive food-themed sweaters.</p>
             <button className="text-black py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto	"
+            <h2 className="text-lg md:text-xl md:mx-5 mt-3 text-white text-center mb-3">
+            Get into the holiday spirit by designing your own festive food-themed sweaters.
+
+        </h2>
+            <button className="knittingAnimateSpan text-slate-800 py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 mt-4 font-bold   flex items-center m-auto pb-2	"
               onClick={() => scrollToElement("imgGenerator")}
             >
               <img
                 src={process.env.PUBLIC_URL + "/images/knittingicon.png"}
                 alt="The Food Group Logo"
-                className="w-10"
+                className="w-10 mb-2 mr-2 knittingAnimate"
               />
               Start Knitting
             </button>
