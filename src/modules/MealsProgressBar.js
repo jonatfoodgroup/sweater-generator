@@ -11,7 +11,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
       height="46px"
       labelColor="#ffffff"
       padding="0px"
-      baseBgColor="#1e293b"
+      baseBgColor="#0f172a"
       bgColor="#859123"
       initCompletedOnAnimation="0"
       labelSize="20px"

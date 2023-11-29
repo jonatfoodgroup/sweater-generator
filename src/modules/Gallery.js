@@ -27,14 +27,8 @@ const Gallery = () => {
         className="pt-10 pb-10"
         style={{
           // add backgroundImage from public folder:
-          backgroundImage: `url(${
-            process.env.PUBLIC_URL + "/images/background-wood.jpg"
-          })`,
-          backgroundRepeat: "no-repeat",
-
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
+        
+        
         }}
       >
         <div
