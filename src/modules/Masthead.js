@@ -20,7 +20,7 @@ const Masthead = () => {
   return (
     <div id="generator" className="h-full flex items-center">
       <div
-        className=" inner-container bg-black mx-auto  p-4 bg-black rounded-lg text-white "
+        className=" inner-container mx-auto  p-4 bg-slate-800 rounded-lg text-white "
       >
         <div className="sm:flex stitchedBorder p-2 sm:p-8">
           <div className="sm:w-1/2 text-white mr-4">
