@@ -68,7 +68,7 @@ code {
   }
 
   .titleBox {
-    background-color:black;
+    /* background-color:black; */
    /* min-height:45vh;*/
     display:block;
     padding: 1rem;
