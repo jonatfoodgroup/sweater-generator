@@ -36,9 +36,7 @@ const Gallery = () => {
           style={{ maxWidth: 1600 }}
         >
           <div className=" stitchedBorder whiteStitch pl-6 pr-6">
-            <h2 className="text-4xl text-amber-300 text-center mt-8 mx-2 block">
-              Check out the TFG Closet
-            </h2>
+            <h2 className="text-4xl text-amber-300 text-center mt-8 mx-2 block">Check out the TFG Closet</h2>
             <GalleryImages images={images} />
           </div>
         </div>
