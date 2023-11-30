@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import Image from "../components/Image";
 
 import { db } from "../firebase/database";
@@ -46,11 +46,18 @@ const Gallery = () => {
 };
 
 const GalleryImages = ({ images }) => {
+  const [displayedImages, setDisplayedImages] = useState(8); // Initial number of images to display
+
   return (
     <div className="container mx-auto flex flex-wrap justify-center py-4">
-      {images.map((imageUrl, index) => (
-      <Image imageUrl={imageUrl} key={index} />
+      {images.slice(0, displayedImages).map((imageUrl, index) => (
+        <Image imageUrl={imageUrl} key={index} />
       ))}
+      {images.length > displayedImages && (
+        <button className='w-auto text-slate-800 py-3 px-6 text-xl rounded-md transition-colors bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto' onClick={() => setDisplayedImages(displayedImages + 8)}>
+          Load More
+        </button>
+      )}
     </div>
   );
 };
