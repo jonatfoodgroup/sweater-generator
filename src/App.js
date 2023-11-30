@@ -24,7 +24,7 @@ const imageUrls = [
           })`,
 
           backgroundRepeat: "no-repeat",
-         
+         backgroundAttachment: "fixed",
           backgroundPosition: "top center",
           backgroundSize: "cover"
         }}
