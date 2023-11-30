@@ -17,17 +17,22 @@ const imageUrls = [
   return (
     <div className="App">
       <Header />
-
-      <div class="imgGenerator" id="imgGenerator"
-        style={{
+      <div  style={{
           // add backgroundImage from public folder:
           backgroundImage: `url(${
-            process.env.PUBLIC_URL + '/images/back-stitched.jpg'
+            process.env.PUBLIC_URL + '/images/header-wood.jpg'
           })`,
-          backgroundRepeat: "repeat",
-         
-          backgroundPosition: "center center",
+
+          backgroundRepeat: "no-repeat",
+         backgroundAttachment: "fixed",
+          backgroundPosition: "top center",
+          backgroundSize: "cover"
         }}
+        >
+
+      
+      <div class="imgGenerator" id="imgGenerator"
+       
       >
         <Masthead
           selectedImage={selectedImage}
@@ -35,6 +40,7 @@ const imageUrls = [
         />
         </div>
         <Gallery images={imageUrls} />
+        </div>
         <Footer />
     </div>
   );

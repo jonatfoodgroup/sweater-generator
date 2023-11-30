@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="h-full mx-auto py-20 px-5	text-center bg-white min-h-screen flex flex-col items-center justify-center snowfall-container"
         style={{
           // add backgroundImage from public folder:
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/images/back-stitched.jpg'
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/images/footer-background.jpg'
             })`,
           backgroundRepeat: "repeat",
           backgroundSize: "contain",
@@ -21,13 +21,12 @@ const Footer = () => {
 
       <Snow/>
       <div class="titleBox bg-slate-800">
-        <div class="siteTitle whiteStitch p-8">
+        <div class="siteTitle p-8">
         <h2 className="text-2xl md:text-5xl leading-6 max-w-2xl text-amber-300 mt-5  mx-auto mb-3">
          We Hope Your Holiday Sweater Has You in Stitches</h2>
-
         <div className="max-w-xl mx-auto md:text-lg">
           <h2 className="text-white">But in all seriousness, it’s the season of giving! That’s why for every sweater you submit The Food Group will donate 10 meals to Feeding America.</h2>
-          <p className="mb-4 mt-4 text-white font-bold" style={{ color: "#324564" }}>MEALS DONATED TO DATE:</p>
+          <p className="mb-4 mt-4 text-white font-bold" style={{ color: "#869123" }}>MEALS DONATED TO DATE:</p>
         </div>
 
         <div className =" max-w-4xl mx-auto " >
@@ -37,7 +36,7 @@ const Footer = () => {
       </div>
       </div>
 
-      <div className=" mx-auto py-16 px-5 h-full w-full bg-slate-800	text-center">
+      <div className=" mx-auto py-16 px-5 h-full w-full 	text-center">
 
 <div className="h-full">
         <h3 className="text-amber-300 md:max-w-2xl mx-auto mb-4 text-xl md:text-3xl"> If you like this (or want your own sweater) give us a ring.</h3>
