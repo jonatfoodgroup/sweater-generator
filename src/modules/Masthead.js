@@ -42,7 +42,6 @@ const Masthead = () => {
 Feast your eyes on your delicious design 
                   </h2>
                   <ImageTiles images={generatedImages} />
-                  <DonationCard />  
                 </div>
               )}
               {generatedImages.length === 0 && (
