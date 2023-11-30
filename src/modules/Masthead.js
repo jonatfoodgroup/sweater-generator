@@ -41,6 +41,7 @@ Feast your eyes on your delicious design
               )}
               {generatedImages.length === 0 && (
                 <div className="w-full">
+                   <h2 className="text-xl md:text-xl mb-4 text-center">Some delicious sweaters from our closet  </h2>
                   <SwiperCarousel images={imagesCarousel} />
                   
                 </div>
