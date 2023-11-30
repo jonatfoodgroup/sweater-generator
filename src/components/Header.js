@@ -17,7 +17,7 @@ const Header = () => {
         style={{
           // add backgroundImage from public folder:
           backgroundImage: `url(${
-            process.env.PUBLIC_URL + "/images/header-background.jpg"
+            process.env.PUBLIC_URL + "/images/Firefly-holiday-sweater-pattern-with-various-foods-in-small-tiles-47435.jpg"
           })`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
