@@ -48,9 +48,11 @@ const Gallery = () => {
 const GalleryImages = ({ images }) => {
   const [displayedImages, setDisplayedImages] = useState(8); // Initial number of images to display
 
+  const reversedImages = images.slice().reverse(); // Create a copy of the array and reverse it
+
   return (
     <div className="container mx-auto flex flex-wrap justify-center py-4">
-      {images.slice(0, displayedImages).map((imageUrl, index) => (
+      {reversedImages.slice(0, displayedImages).map((imageUrl, index) => (
         <Image imageUrl={imageUrl} key={index} />
       ))}
       {images.length > displayedImages && (

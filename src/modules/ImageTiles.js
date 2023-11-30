@@ -1,12 +1,21 @@
 import React from "react";
+import { useState } from "react";
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
 import { addGalleryItem } from "../firebase/storage";
+import Modal from "../components/Modal.js"; 
 
 
 const ImageTiles = ({ images }) => {
+  const [showModal, setShowModal] = useState(false);
+
   const handleAddToGallery = async (blob) => {
     let image = await addGalleryItem(blob);
-  }
+    setShowModal(true);
+
+  };
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   return (
 
@@ -21,10 +30,18 @@ const ImageTiles = ({ images }) => {
           <Image file={images[images.length-1]} />
           <div className="relative bottom-0 left-0 w-full">
     <div className="inlineTools addToGallery md:inline-flex items-center bg-slate-900 rounded-b-md bg-opacity-80">
-      <button className="bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full" onClick={() => handleAddToGallery(images[images.length-1])}>Add to closet</button>
+    <button
+              className="bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full"
+              onClick={() => handleAddToGallery(images[images.length - 1])}
+            >Add to closet</button>
     </div>
   </div>
           </div>
+
+          <Modal isOpen={showModal} onClose={closeModal}>
+        {/* Your modal content goes here */}
+        <p className="text-black">Modal content here</p>
+      </Modal>
         {/* </div>
       ))} */}
     </div>
