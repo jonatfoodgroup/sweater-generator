@@ -33,16 +33,14 @@ const ImageTiles = ({ images }) => {
     <button
               className="bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full"
               onClick={() => handleAddToGallery(images[images.length - 1])}
-            >
-              Add to closet
-            </button>
+            >Add to closet</button>
     </div>
   </div>
           </div>
 
           <Modal isOpen={showModal} onClose={closeModal}>
         {/* Your modal content goes here */}
-        <p>Modal content here</p>
+        <p className="text-black">Modal content here</p>
       </Modal>
         {/* </div>
       ))} */}
