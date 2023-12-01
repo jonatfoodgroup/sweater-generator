@@ -7,6 +7,8 @@ import Footer from "./modules/Footer";
 import { useParams } from "react-router-dom";
 import { db } from "./firebase/database";
 import {  ref, get } from "firebase/database";
+import { Helmet } from 'react-helmet-async';
+
 
 function App() {
   const { id } = useParams();
@@ -45,9 +47,21 @@ function App() {
   
   if (singleImage) {
     return (
+      <>
+      <Helmet>
+        {/* Set dynamic meta tags based on singleImage */}
+        {singleImage && (
+          <>
+            <title>{singleImage.title}</title>
+            <meta name="description" content={"woo"} />
+            <meta property="og:title" content={"Check out our sweater generator!"} />
+          </>
+        )}
+      </Helmet>
       <div className="App text-center justify-center">
         <SingleImage image={singleImage} />
       </div>
+      </>
     );
   }
   return (
