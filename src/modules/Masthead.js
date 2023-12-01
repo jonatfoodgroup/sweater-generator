@@ -68,7 +68,7 @@ const ContentBlock = () => {
     <div className="container mx-auto px-5 text-left">
       <div className="mx-auto mt-20">
         <h2 className="text-lg md:text-2xl md:mx-5 text-white text-center mb-3">
-          Get into the holiday spirit and design your own festive food-themed
+        content block copy   Get into the holiday spirit and design your own festive food-themed
           sweaters with our magical generator.
         </h2>
       </div>
