@@ -53,7 +53,7 @@ const GalleryImages = ({ images }) => {
   return (
     <div className="container mx-auto flex flex-wrap justify-center py-4">
       {reversedImages.slice(0, displayedImages).map((imageUrl, index) => (
-        <Image imageUrl={imageUrl} key={index} />
+        <Image imageUrl={imageUrl} key={index} imageID={index} />
       ))}
       {images.length > displayedImages && (
         <button className='w-auto text-slate-800 py-3 px-6 text-xl rounded-md transition-colors bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto' onClick={() => setDisplayedImages(displayedImages + 8)}>

@@ -6,9 +6,9 @@ import {
   EmailShareButton,
 } from "react-share";
 
-const Image = ({ imageUrl, setSelectedImage }) => {
+const Image = ({ imageUrl, setSelectedImage, imageID }) => {
   const [hovered, setHovered] = useState(false);
-  const shareUrl = window.location.href; // Replace with your own URL
+  const shareUrl = window.location.href + '/image/' + imageID;
   const title = "The Food Group Holiday Sweater Generator"; // Replace with your own title
 
   return (
