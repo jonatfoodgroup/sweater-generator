@@ -6,6 +6,8 @@ import Swiper from "../components/Swiper";
 import SwiperCarousel from "../components/Swiper";
 const Masthead = () => {
   const [generatedImages, setGeneratedImages] = React.useState([]);
+  const [customPrompt, setCustomPrompt] = React.useState("");
+
 
   const addImage = (base64Image) => {
     setGeneratedImages((prevImages) => [...prevImages, base64Image]);
@@ -31,7 +33,7 @@ const Masthead = () => {
       >
         <div className="sm:flex stitchedBorder whiteStitch p-2 sm:p-8">
           <div className="sm:w-1/2 text-white mr-4">
-            <ImageGenerator addImage={addImage} />
+            <ImageGenerator addImage={addImage} setCustomPrompt={setCustomPrompt} customPrompt={customPrompt} />
           </div>
 
           <div className="sm:w-1/2  text-white">
@@ -41,7 +43,7 @@ const Masthead = () => {
                   <h2 className="text-xl md:text-2xl mb-4 text-center">
 Feast your eyes on your delicious design 
                   </h2>
-                  <ImageTiles images={generatedImages} />
+                  <ImageTiles images={generatedImages} customPrompt={customPrompt} />
                 </div>
               )}
               {generatedImages.length === 0 && (
