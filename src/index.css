@@ -489,47 +489,44 @@ div.container.containerFlex {
   color: rgb(133, 145, 35);
 }
 
-.popup-overlay {
-  background: rgba(0, 0, 0, 0.5);
+.pure {
+  color: #e75480;
+  text-decoration: underline;
+  font-weight: 600;
 }
 
-.modal {
-  font-size: 12px;
-}
-.modal > .header {
+
+
+.popup {
+  height: 100vh;
   width: 100%;
-  border-bottom: 1px solid gray;
-  font-size: 18px;
-  text-align: center;
-  padding: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
 }
-.modal > .content {
-  width: 100%;
-  padding: 10px 5px;
+.popup:target {
+  opacity: 1;
+  visibility: visible;
 }
-.modal > .actions {
-  width: 100%;
-  padding: 10px 5px;
-  margin: auto;
-  text-align: center;
-}
-.modal > .close {
-  cursor: pointer;
+.popup__content {
   position: absolute;
-  display: block;
-  padding: 2px 5px;
-  line-height: 20px;
-  right: -10px;
-  top: -10px;
-  font-size: 24px;
-  background: #ffffff;
-  border-radius: 18px;
-  border: 1px solid #cfcece;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
 }
-
-.popup-content {
-  margin: auto;
-  background: rgb(255, 255, 255);
-  width: 50%;
-  padding: 5px;
+.popup__text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
 }
