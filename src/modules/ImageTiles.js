@@ -54,7 +54,7 @@ const scrollToElement = (elementId) => {
 {/* <div class="flex items-center justify-center h-screen">
   <button class="py-2 px-6 bg-blue-500 text-white rounded hover:bg-blue-700" onclick="toggleModal()">Show Modal</button>
 </div> */}
-{/* <Modal isOpen={showModal} onClose={closeModal}> */}
+<Modal isOpen={showModal} onClose={closeModal}>
 <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden"  id="modal">
   <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
     <div class="fixed inset-0 transition-opacity">
@@ -74,7 +74,7 @@ const scrollToElement = (elementId) => {
     />
   </div>
   </div>
-  {/* </Modal> */}
+
 
   {/* Content on the Right */}
   <div className="mx-4 ">
@@ -87,7 +87,7 @@ const scrollToElement = (elementId) => {
       </div>
     </div>
   </div>
-</div>
+  </Modal>
     </div>
 
     

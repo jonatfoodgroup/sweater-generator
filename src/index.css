@@ -530,3 +530,7 @@ div.container.containerFlex {
   font-size: 1.4rem;
   margin-bottom: 4rem;
 }
+
+input[type=submit] {
+  background-color: rgb(252 211 77);
+}
