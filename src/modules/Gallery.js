@@ -46,14 +46,15 @@ const Gallery = () => {
 };
 
 const GalleryImages = ({ images }) => {
+  console.log("Image Gallery Images", images);
   const [displayedImages, setDisplayedImages] = useState(8); // Initial number of images to display
 
   const reversedImages = images.slice().reverse(); // Create a copy of the array and reverse it
 
   return (
     <div className="container mx-auto flex flex-wrap justify-center py-4">
-      {reversedImages.slice(0, displayedImages).map((imageUrl, index) => (
-        <Image imageUrl={imageUrl} key={index} />
+      {reversedImages.slice(0, displayedImages).map((imageObj, index) => (
+        <Image imageUrl={imageObj.url} customPrompt={imageObj.prompt} key={index} />
       ))}
       {images.length > displayedImages && (
         <button className='w-auto text-slate-800 py-3 px-6 text-xl rounded-md transition-colors bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto' onClick={() => setDisplayedImages(displayedImages + 8)}>

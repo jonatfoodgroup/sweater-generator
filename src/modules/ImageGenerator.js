@@ -8,9 +8,8 @@ const apiKey = process.env.REACT_APP_OPENAI_API_KEY || "";
 
 const apiRoute = "https://api.openai.com/v1/images/generations";
 
-function ImageGenerator({ addImage }) {
+function ImageGenerator({ addImage, customPrompt, setCustomPrompt }) {
   const [selectedPrompt, setSelectedPrompt] = useState("");
-  const [customPrompt, setCustomPrompt] = useState("");
   const [generatedImages, setGeneratedImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 

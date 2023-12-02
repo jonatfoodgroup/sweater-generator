@@ -7,7 +7,7 @@ import { set, ref, push } from "firebase/database";
 export const storage = getStorage(app);
 
 // Accepts a File object as an argument
-export const addGalleryItem = async (imageFile) => {
+export const addGalleryItem = async (imageFile, prompt) => {
   console.log("Adding image to gallery");
   const galleryRef = storageRef(storage, "gallery");
   const fileName = `image_${Date.now()}.png`; // You can generate a unique filename here
@@ -26,11 +26,16 @@ export const addGalleryItem = async (imageFile) => {
     //gallery ref
     const galleryListRef = ref(db, "gallery");
 
+    let obj = {
+      url: downloadURL,
+      prompt: prompt
+    }
     //push to gallery
     const newGalleryItemRef = push(galleryListRef);
-    set(newGalleryItemRef, downloadURL);
-
-    return downloadURL;
+    set(newGalleryItemRef, obj);
+    console.log("Prompt", obj)
+    // return downloadURL;å
+    return obj;
 
   } catch (error) {
     console.error("Error uploading image:", error);

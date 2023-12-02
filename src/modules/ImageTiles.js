@@ -1,25 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
 import { addGalleryItem } from "../firebase/storage";
 import Modal from "../components/Modal.js"; 
 
 
-const ImageTiles = ({ images }) => {
+const ImageTiles = ({ images, customPrompt }) => { // props = { images, customPrompt }
   const [showModal, setShowModal] = useState(false);
 
   const handleAddToGallery = async (blob) => {
-    let image = await addGalleryItem(blob);
+    let prompAndImageObj = await addGalleryItem(blob, customPrompt);
     setShowModal(true);
 
   };
   const closeModal = () => {
     setShowModal(false);
   };
-
-const toggleModal = () => {
-  document.getElementById('modal').classList.toggle('hidden');
-};
 
 const scrollToElement = (elementId) => {
   const element = document.getElementById(elementId);
@@ -28,6 +24,9 @@ const scrollToElement = (elementId) => {
   }
 };
 
+  useEffect(() => {
+    console.log(customPrompt);
+  }, [customPrompt]);
   return (
 
     <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
