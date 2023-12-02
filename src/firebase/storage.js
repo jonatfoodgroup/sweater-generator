@@ -33,8 +33,9 @@ export const addGalleryItem = async (imageFile, prompt) => {
     //push to gallery
     const newGalleryItemRef = push(galleryListRef);
     set(newGalleryItemRef, obj);
-
-    return downloadURL;
+    console.log("Prompt", obj)
+    // return downloadURL;å
+    return obj;
 
   } catch (error) {
     console.error("Error uploading image:", error);

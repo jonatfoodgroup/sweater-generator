@@ -5,11 +5,11 @@ import { addGalleryItem } from "../firebase/storage";
 import Modal from "../components/Modal.js"; 
 
 
-const ImageTiles = ({ images, customPrompt }) => {
+const ImageTiles = ({ images, customPrompt }) => { // props = { images, customPrompt }
   const [showModal, setShowModal] = useState(false);
 
   const handleAddToGallery = async (blob) => {
-    let image = await addGalleryItem(blob, customPrompt);
+    let prompAndImageObj = await addGalleryItem(blob, customPrompt);
     setShowModal(true);
 
   };
