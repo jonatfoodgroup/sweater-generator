@@ -533,4 +533,51 @@ div.container.containerFlex {
 
 input[type=submit] {
   background-color: rgb(252 211 77);
+  font-family: "cardigan", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+input[name=name] {
+  font-family: "cardigan", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.label-floating input:not(:placeholder-shown) {
+  padding-top: 1.4rem;
+}
+.label-floating input:not(:placeholder-shown) ~ label {
+  font-size: 0.6rem;
+  transition: all 0.2s ease-in-out;
+  color: #1f9d55;
+  top: 0;
+}
+
+.overlay-top {
+  top: -3rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .overlay-top {
+    top: -4rem;
+  }
+}
+
+.font-sway {
+  font-family: sway-variable, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variation-settings: "CNST" 100, "wght" 400;
+}
+
+.font-cardigan {
+  font-family: cardigan, sans-serif;
+}
+
+@media only screen and (min-width: 480px) {
+  .mastHeadmw {
+    max-width: 980px;
+  }
 }

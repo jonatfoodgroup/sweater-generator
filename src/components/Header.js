@@ -13,7 +13,7 @@ const Header = () => {
 
 
 <div
-        className="siteIntro pt-10 pb-10"
+        className="siteIntro pt-10 pb-10 z-0"
         style={{
           // add backgroundImage from public folder:
           backgroundImage: `url(${

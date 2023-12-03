@@ -17,7 +17,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
       labelSize="20px"
       transitionDuration="5s"
       animateOnRender
-      className="mt-4"
+      className="p-0 mt-4"
       maxCompleted={1200}
       customLabel="250 &nbsp;"
       />

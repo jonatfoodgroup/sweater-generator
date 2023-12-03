@@ -12,29 +12,24 @@ const Image = ({ imageUrl, setSelectedImage, customPrompt, name}) => {
   const title = "The Food Group Holiday Sweater Generator"; // Replace with your own title
 
   return (
+    <div className="w-1/2 lg:w-1/4 relative">
     <div
-      className="w-1/2 lg:w-1/4  relative"
+      className="m-4 mb-1 relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-     <div className="m-4"><img
+
+      
+     <div className="relative"><img
         src={imageUrl}
         alt={`Food Sweater with ${customPrompt}`}
         className="w-full h-auto rounded-md"
       />
-         <div>{customPrompt}
-         
-         {name ? (
-        <span> by {name}</span>
-      ) : (
-        ""
-      )}
-         </div> 
       </div>
    
 
       {hovered && (
-        <div className="absolute  bottom-0 left-0 p-4 mt-1 w-full">
+        <div className="absolute bottom-0 left-0 mt-1 w-full">
           <div className="inlineTools md:inline-flex items-center bg-slate-900 p-4 rounded-b-md bg-opacity-80">
             <DownloadButton className=" text-white  font-bold cursor-pointer" imageUrl={imageUrl} />
             <FacebookShareButton url={shareUrl} quote={title}>
@@ -46,7 +41,16 @@ const Image = ({ imageUrl, setSelectedImage, customPrompt, name}) => {
           </div>
         </div>
       )}
+      </div>
+               <p className=" text-center text-md leading-tight font-thin mx-4 my-2 mt-0 mb-2">"{customPrompt}"
+               {name ? (
+        <span className="block font-sway text-sm font-bold text-amber-300">    by {name}</span>
+      ) : (
+        ""
+      )}
+         </p> 
     </div>
+    
   );
 };
 

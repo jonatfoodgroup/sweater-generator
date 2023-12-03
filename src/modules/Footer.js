@@ -7,7 +7,7 @@ import Snow from "../components/SnowFall.js";
 const Footer = () => {
   return (
     <>
-      <div className="h-full mx-auto py-20 px-5	text-center bg-white min-h-screen flex flex-col items-center justify-center snowfall-container"
+      <div className="z-0 h-full mx-auto py-20 px-5	text-center bg-white min-h-screen flex flex-col items-center justify-center snowfall-container"
         style={{
           // add backgroundImage from public folder:
           backgroundImage: `url(${process.env.PUBLIC_URL + '/images/footer-background.jpg'
@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
 
         <div className =" max-w-4xl mx-auto " >
-        <MealsProgressBar />
+        <MealsProgressBar className="p-5" />
         </div> 
         </div>
       </div>
@@ -41,7 +41,7 @@ const Footer = () => {
 <div className="h-full">
         <h3 className="text-amber-300 md:max-w-2xl mx-auto mb-4 text-xl md:text-3xl"> If you like this (or want your own sweater) give us a ring.</h3>
         <p className="text-lg md:max-w-2xl mx-auto mb-4 text-white">We’d love to show how our culinary expertise and creativity can help you and your business.</p>
-        <a href="https://thefoodgroup.com/contact-us/" target="_blank" className="rounded-md text-slate-800 text-lg transition-colors duration-300 bg-amber-300 hover:bg-amber-400 p-3 m-3 pb-2 font-bold display: inline-block">Lets Talk</a>
+        <a href="https://thefoodgroup.com/contact-us/" target="_blank" className="rounded-md text-slate-800 text-lg transition-colors duration-300 bg-amber-300 hover:bg-amber-400 p-3 m-3 pb-2 font-bold display: inline-block">Let's Talk</a>
       </div>
       </div></>
   )
