@@ -575,6 +575,9 @@ input[name=name] {
 .font-cardigan {
   font-family: cardigan, sans-serif;
 }
+.mastHeadmw {
+  max-width: 100%;
+}
 
 @media only screen and (min-width: 480px) {
   .mastHeadmw {
