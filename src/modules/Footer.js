@@ -7,7 +7,7 @@ import Snow from "../components/SnowFall.js";
 const Footer = () => {
   return (
     <>
-      <div className="z-0 h-full mx-auto py-20 px-5	text-center bg-white min-h-screen flex flex-col items-center justify-center snowfall-container"
+      <div className="z-10 h-full mx-auto py-20 px-5	text-center bg-white min-h-screen flex flex-col items-center justify-center snowfall-container"
         style={{
           // add backgroundImage from public folder:
           backgroundImage: `url(${process.env.PUBLIC_URL + '/images/footer-background.jpg'

@@ -67,7 +67,7 @@ const Modal = ({ isOpen, onClose, newDataObj, children }) => {
 
 
   return (
-    <div className="fixed inset-0 z-10 flex items-center justify-center">
+    <div className="fixed inset-0 z-20 flex items-center justify-center">
       <div className="absolute inset-0 bg-black opacity-60" onClick={onClose}></div>
       <div className="bg-white sm:p-4 p-2 sm:mx-auto mx-4 rounded-lg z-20">
         {children}
