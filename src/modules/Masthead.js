@@ -28,7 +28,7 @@ const Masthead = () => {
   return (
     <div id="generator" className="h-full flex items-center">
       <div
-        className="mastHeadmw bg-slate-800 mx-auto max-w-full p-4 rounded-lg text-white ">
+        className="mastHeadmw bg-slate-800 mx-auto p-4 rounded-lg text-white ">
         <div className="sm:flex stitchedBorder whiteStitch p-2 sm:p-8">
           <div className="sm:w-1/2 text-white sm:mr-4">
             <ImageGenerator addImage={addImage} setCustomPrompt={setCustomPrompt} customPrompt={customPrompt} />
