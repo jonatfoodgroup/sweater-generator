@@ -74,7 +74,7 @@ const Modal = ({ isOpen, onClose, newDataObj, children }) => {
         <div className="DonationCard max-w-lg  mx-auto rounded-md sm:p-16 px-6 pt-10 pb-10 bg-slate-900">
           <div className="items-center py-4">
             {/* Circular Avatar Image */}
-            <div className="mx-auto rounded-full sm:h-28 sm:w-28 h-20 w-20 absolute bg-white inset-x-0 top-0 overlay-top">
+            <div className="mx-auto rounded-full sm:h-28 sm:w-28 h-20 w-20 absolute bg-white inset-x-0 overlay-top">
               <img
                 src="https://nvlupin.blob.core.windows.net/images/van/FAM/FAM/1/87084/images/themes/favicon.png"
                 alt="Avatar"
