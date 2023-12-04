@@ -6,6 +6,11 @@ import {
   EmailShareButton,
 } from "react-share";
 
+const openInNewTab = (url) => {
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+  if (newWindow) newWindow.opener = null;
+}
+
 const Image = ({ imageUrl, setSelectedImage, customPrompt, name, imageID }) => {
   const [hovered, setHovered] = useState(false);
   const shareUrl = window.location.href + '/image/' + imageID;
@@ -65,12 +70,13 @@ const DownloadButton = ({ imageUrl }) => {
 
     // Should be a blob that is then downloaded to the user's computer without opening a new tab
 
-    const link = document.createElement("a");
-    link.href = imageUrl;
-    link.download = "image.png";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // const link = document.createElement("a");
+    // link.href = imageUrl;
+    // link.download = "image.png";
+    // document.body.appendChild(link);
+    // link.click();
+    // document.body.removeChild(link);
+    openInNewTab(imageUrl);
 
   };
 
