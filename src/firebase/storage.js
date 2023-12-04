@@ -45,28 +45,31 @@ export const addGalleryItem = async (imageFile, prompt) => {
   }
 };
 
-export const updateGalleryItem = async (username) => {
+export const updateGalleryItem = (name) => {
 
   
-  // get last from gallery
+  try {
+      // get last from gallery
 
   const galleryRef = ref(db, "gallery");
   onValue(galleryRef, (snapshot) => {
     const ImgListObj = snapshot.val();
     const lastImgTuple = Object.entries(ImgListObj).pop();
-    lastImgTuple[1].username = username;
+    lastImgTuple[1].username = name;
     const lastItemKey = lastImgTuple[0];
     const lastItem = lastImgTuple[1];
     console.log("lastItem: ", lastImgTuple[1]);
   // const galleryRef = storageRef(storage, "gallery");
 
   const starCountRef = ref(db, 'gallery/' + lastItemKey);
-console.log(starCountRef);
-console.log(lastItem);
-
-update(starCountRef, { username: username})
+// console.log(starCountRef);
+// console.log(lastItem);
+update(starCountRef, { username: name})
   });
 
+  } catch (error) {
+    console.error("Error getting images:", error);
+  }
 
 
 };

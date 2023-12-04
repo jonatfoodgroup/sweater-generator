@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect }from "react";
 import { updateGalleryItem } from "../firebase/storage";
 import { update } from "firebase/database";
 
@@ -12,9 +12,12 @@ const scrollToElement = (elementId) => {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 };
-const Modal = ({ isOpen, onClose, newDataObj, children }) => {
+const Modal = ({ isOpen, onClose, children } ) => {
+  const [username, setUsername] = React.useState("");
+  useEffect(() => {
 
-  const [username, setUsername] = React.useState("") //! might not need
+  }, []);
+  // const [username, setUsername] = React.useState("") //! might not need
   // const [username, setUsername] = React.useState(newDataObj.username) <--
   // React.useEffect(() => {
     // Get the images from Firebase Storage
@@ -53,18 +56,18 @@ const Modal = ({ isOpen, onClose, newDataObj, children }) => {
       const lastItemKey = lastImgTuple[0];
       const lastItem = lastImgTuple[1];
       console.log("lastItem: ", lastImgTuple[1]);
+  
     })
       try {
 
-      
         updateGalleryItem(username)
+
         onClose();
         // scrollToElement('closet');
       } catch (e) {
         console.error("Error adding document: ", e);
       }
 }
-
 
   return (
     <div className="fixed inset-0 z-20 flex items-center justify-center">
@@ -107,24 +110,7 @@ const Modal = ({ isOpen, onClose, newDataObj, children }) => {
   onClick={ onSubmit } type="submit" value="Submit" />
   </div>
 </form>
-
-
-{/* <form class="font-sans text-sm rounded w-full max-w-xs mx-auto my-8 px-8 pt-8 pb-8">
-  <h3 class="mb-4 font-normal text-green">Enter something in the form:</h3>
-      <div class="relative border text-black rounded mb-4 appearance-none label-floating">
-        <input class="text-black w-full py-2 px-3 text-green-darker leading-normal rounded" id="username" type="text" placeholder="Username"/>
-        <label class="top-0 absolute block text-green-darker pin-t pin-l w-full px-3 py-2 leading-normal" for="username">
-          Username
-        </label>
-      </div>
-      <div class="flex items-center justify-between">
-        <button class="bg-green-darkest hover:bg-black text-white py-2 px-4 rounded" type="button">
-        Sign In
-        </button>
-      </div>
-    </form> */}
         </div>
-        {/* <button onClick={onClose}>Close Modal</button> */}
       </div>
     </div>
   );
