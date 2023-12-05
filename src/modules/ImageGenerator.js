@@ -94,7 +94,7 @@ function ImageGenerator({ addImage, customPrompt, setCustomPrompt }) {
         rows="2" // Adjust the number of rows as needed
       />
   <button
-        className="w-auto text-slate-800 py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 font-bold flex items-center mt-3 mb-2 sm:m-auto"
+        className="sm:m-auto sm:w-auto  sm:flex mx-0 w-full text-slate-800 py-3 px-6 text-xl rounded-md transition-colors duration-300 bg-amber-300 hover:bg-amber-400 font-bold block items-center"
         onClick={handleGenerateImages}>
         {isLoading ? (
           <Loadericon isActive={isLoading} />

@@ -49,9 +49,16 @@ code {
 
 }
   .imgGenerator {
-    height: 100vh;
-    width: 100%;
+   height: auto;
     animation: fadeIn 3s;
+  }
+
+  @media screen and (min-width: 480px) {
+    .imgGenerator {
+      height: 100vh;
+      width: 100%;
+      animation: fadeIn 3s;
+    }
   }
 
   h1 {
@@ -216,6 +223,9 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  display: flex !important;
+  flex-wrap: wrap;
 }
 
 .swiper-slide img {
@@ -418,11 +428,17 @@ button {
   padding:.75rem;
   outline:none;
   border:none;
-  margin:1em;
+  margin:0em;
   font-size:1rem;
   font-variation-settings: "CNST" 100, "wght" 600;
   font-family: cardigan, sans-serif;
   /* background-color: rgb(252 211 77); */
+}
+
+@media only screen and (min-width: 480px) {
+  button {
+    margin:1em;
+  }
 }
 
 .inlineTools button {
@@ -584,3 +600,4 @@ input[name=name] {
     max-width: 980px;
   }
 }
+
