@@ -5,6 +5,7 @@ import {
   EmailIcon,
   EmailShareButton,
 } from "react-share";
+import { getDownloadURL, ref, getStorage, getBlob } from "firebase/storage";
 
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -66,19 +67,19 @@ const Image = ({ imageUrl, setSelectedImage, customPrompt, name, imageID }) => {
 
 const DownloadButton = ({ imageUrl }) => {
   const downloadImage = () => {
-    console.log("download image", imageUrl);
+    const storage = getStorage();
+    const storageRef = ref(storage, imageUrl);
+    getBlob(storageRef).then((blob) => {
+      // Download the blob to the user's computer.
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "food-sweater.png";
+      a.click();
 
-    // Should be a blob that is then downloaded to the user's computer without opening a new tab
+    });
+  }
 
-    // const link = document.createElement("a");
-    // link.href = imageUrl;
-    // link.download = "image.png";
-    // document.body.appendChild(link);
-    // link.click();
-    // document.body.removeChild(link);
-    openInNewTab(imageUrl);
-
-  };
 
   return (
     <button
