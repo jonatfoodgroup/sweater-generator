@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
-import { updateGalleryItem } from "../firebase/storage";
-import { update } from "firebase/database";
 
-import { db } from "../firebase/database";
-import { ref, onValue } from "firebase/database";
+import React, { useState } from "react";
+import { updateGalleryItem } from "../firebase/storage";
 
 const scrollToElement = (elementId) => {
   const element = document.getElementById(elementId);
@@ -11,28 +8,9 @@ const scrollToElement = (elementId) => {
     element.scrollIntoView({ behavior: "smooth" });
   }
 };
-const Modal = ({ isOpen, onClose, children }) => {
-  const [username, setUsername] = React.useState("");
-  useEffect(() => {}, []);
-  // const [username, setUsername] = React.useState("") //! might not need
-  // const [username, setUsername] = React.useState(newDataObj.username) <--
-  // React.useEffect(() => {
-  // Get the images from Firebase Storage
-  // const galleryRef = ref(db, "gallery");
-  // onValue(galleryRef, (snapshot) => {
-  //   const ImgListObj = snapshot.val();
-  //   const lastImgTuple = Object.entries(ImgListObj).pop();
 
-  //    lastImgTuple[1].username = username;
-
-  //   console.log("lastImgObj: ", lastImgTuple);
-
-  // if (data) {
-  //   const imageUrlObjs = Object.values(data);
-
-  // }
-  //   });
-  // }, []);
+const Modal = ({ isOpen, onClose, objId }) => {
+  const [username, setUsername] = useState("");
 
   if (!isOpen) {
     return null;
@@ -42,8 +20,13 @@ const Modal = ({ isOpen, onClose, children }) => {
     scrollToElement("closet");
   }
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
+  const onSubmit = async () => {
+    try {
+      let update = await updateGalleryItem(username, objId);
+      onClose();
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
   };
 
   return (
@@ -53,10 +36,8 @@ const Modal = ({ isOpen, onClose, children }) => {
         onClick={onClose}
       ></div>
       <div className="bg-white sm:p-4 p-2 sm:mx-auto mx-4 rounded-lg z-20">
-        {children}
         <div className="DonationCard max-w-lg  mx-auto rounded-md sm:p-16 px-6 pt-10 pb-10 bg-slate-900">
           <div className="items-center py-4">
-            {/* Circular Avatar Image */}
             <div className="mx-auto rounded-full sm:h-28 sm:w-28 h-20 w-20 absolute bg-white inset-x-0 overlay-top">
               <img
                 src="https://nvlupin.blob.core.windows.net/images/van/FAM/FAM/1/87084/images/themes/favicon.png"
@@ -64,8 +45,6 @@ const Modal = ({ isOpen, onClose, children }) => {
                 className="object-cover w-full h-full"
               />
             </div>
-
-            {/* Content on the Right */}
             <div className="text-center">
               <h3 className="text-3xl text-amber-300 pb-4">Added to Closet!</h3>
               <p className="text-xl text-white">
@@ -89,12 +68,12 @@ const Modal = ({ isOpen, onClose, children }) => {
                   placeholder="Enter name here"
                 />
               </label>
-              <input
+              <button
                 className="w-5/12 cursor-pointer w-auto rounded-r-md text-slate-800 text-m transition-colors duration-300 bg-amber-300 hover:bg-amber-400 p-3"
-                onClick={(e) => onSubmit()}
-                type="submit"
-                value="Submit"
-              />
+                onClick={() => onSubmit()}
+              >
+                Add Name
+              </button>
             </div>
           </form>
         </div>

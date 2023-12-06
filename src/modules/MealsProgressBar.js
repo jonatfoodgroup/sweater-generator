@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect} from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
-    
 
 
-  const MealsProgressBar = () => {
-    console.log('Render ProgressBar');
-    return (
-      <ProgressBar
-      completed={250}
+const MealsProgressBar = ({
+  count = 0,
+}) => {
+  return (
+    <ProgressBar
+      completed={count}
       height="46px"
       labelColor="#ffffff"
       padding="0px"
@@ -19,11 +19,13 @@ import ProgressBar from "@ramonak/react-progress-bar";
       animateOnRender
       className="p-0 mt-4"
       maxCompleted={1200}
-      customLabel="250 &nbsp;"
-      />
-      
-    );
-  };
-
+      customLabel={
+        <div className="flex flex-col">
+          <span className="text-2xl font-bold">{count}</span>
+        </div>
+      }
+    />
+  );
+};
 
 export default MealsProgressBar;

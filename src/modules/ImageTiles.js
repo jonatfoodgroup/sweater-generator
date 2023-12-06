@@ -1,80 +1,69 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { PlusCircleIcon } from "@heroicons/react/24/outline";
+import React, { useState, useEffect } from "react";
 import { addGalleryItem } from "../firebase/storage";
-import Modal from "../components/Modal.js"; 
+import Modal from "../components/Modal.js";
 
-
-const ImageTiles = ({ images, customPrompt }) => { // props = { images, customPrompt }
+const ImageTiles = ({ image, customPrompt, setGeneratedImage, setPrompt }) => {
   const [showModal, setShowModal] = useState(false);
-  const [dataObj, setDataObj] = useState({});
-  const [blob, setBlob] = useState(null)
+  const [newItem, setNewItem] = useState(null);
+  const [isAdded, setIsAdded] = useState(false);
 
-
-  //refactor this method to modal
   const handleAddToGallery = async (blob) => {
-    let prompAndImageObj = await addGalleryItem(blob, customPrompt);
+    let newItemRef = await addGalleryItem(blob, customPrompt);
     setShowModal(true);
-    setBlob(blob); // shouldnt need - delete later
-    setDataObj(prompAndImageObj);
-
+    setNewItem(newItemRef);
+    setIsAdded(true);
   };
+
   const closeModal = () => {
     setShowModal(false);
   };
 
-const scrollToElement = (elementId) => {
-  const element = document.getElementById(elementId);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+  const restart = () => {
+    setGeneratedImage(null);
+    setPrompt("");
   }
-};
 
-  useEffect(() => {
-    console.log(customPrompt);
-  }, [customPrompt]);
   return (
-
     <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-      {/* {images.map((blob, index) => (
-        <div key={index}> */}
-        <div className="relative">
-          {/* <button className="border-1  py-2 m-1 border-solid border-amber-400 flex-1 inline-flex items-center h-12 w-15 text-sm rounded-md text-white m-0 bg-black" onClick={() => handleAddToGallery(images[images.length-1])}>
-            <PlusCircleIcon />
-            Add to gallery
-          </button> */}
-          <Image file={images[images.length-1]} />
-          <div className="relative bottom-0 left-0 w-full">
-    <div className="inlineTools addToGallery md:inline-flex items-center bg-slate-900 rounded-b-md bg-opacity-80">
-    <button
-              className="bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full"
-              onClick={() => handleAddToGallery(images[images.length - 1])}
-            >Add to closet</button>
-    </div>
-  </div>
+      <div className="relative">
+        <Image file={image} />
+        <div className="relative bottom-0 left-0 w-full">
+          <div className="inlineTools addToGallery md:inline-flex items-center bg-slate-900 rounded-b-md bg-opacity-80">
+            {isAdded && (
+              <>
+              <button
+                className="bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full"
+                onClick={() => restart()}
+              >
+                Restart
+              </button>
+              </>
+            )}
+            {!isAdded && (
+              <button
+                className="bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full"
+                onClick={() => handleAddToGallery(image)}
+              >
+                Add to closet
+              </button>
+            )}
           </div>
+        </div>
+      </div>
 
-        {/* </div>
-      ))} */}
-{/* <div class="flex items-center justify-center h-screen">
-  <button class="py-2 px-6 bg-blue-500 text-white rounded hover:bg-blue-700" onclick="toggleModal()">Show Modal</button>
-</div> */}
-<Modal isOpen={showModal} onClose={closeModal} newDataObj={dataObj} >
-
-  </Modal>
+      <Modal
+        isOpen={showModal}
+        onClose={closeModal}
+        objId={newItem ? newItem : null}
+      ></Modal>
     </div>
-
-    
   );
 };
 
-// Display blob using file reader
-const Image = ({file}) => {
-  const [image, setImage] = React.useState(null);
-
-  React.useEffect(() => {
+const Image = ({ file }) => {
+  const [image, setImage] = useState(null);
+  useEffect(() => {
     if (file) {
-      console.log("file", file);
       const reader = new FileReader();
       reader.onloadend = () => {
         setImage(reader.result);
@@ -95,7 +84,6 @@ const Image = ({file}) => {
       />
     </div>
   );
-}
-
+};
 
 export default ImageTiles;
