@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { db } from "../src/firebase/database";
-import { storage } from "../src/firebase/storage";
+import { db } from "../firebase/database";
+import { storage } from "../firebase/storage";
 import { ref, get } from "firebase/database";
 import { getDownloadURL, ref as storageRef } from "firebase/storage";
 

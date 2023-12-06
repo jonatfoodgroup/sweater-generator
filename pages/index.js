@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import Header from "../src/components/Header";
-import Footer from "../src/modules/Footer";
-import Masthead from "../src/modules/Masthead";
-import Gallery from "../src/modules/Gallery";
-import { db } from "../src/firebase/database";
+import Header from "../components/Header";
+import Footer from "../modules/Footer";
+import Masthead from "../modules/Masthead";
+import Gallery from "../modules/Gallery";
+import { db } from "../firebase/database";
 import { ref, onValue } from "firebase/database";
 
 export default function Home() {
