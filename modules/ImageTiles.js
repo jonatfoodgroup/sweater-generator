@@ -35,7 +35,7 @@ const ImageTiles = ({ image, customPrompt, setGeneratedImage, setPrompt }) => {
                 className="bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full"
                 onClick={() => restart()}
               >
-                Restart
+                Knit Another Sweater
               </button>
               </>
             )}

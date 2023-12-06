@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   font-variation-settings: "CNST" 100, "wght" 600;
 }
-button {  font-variation-settings: "CNST" 100, "wght" 690;
+button {  font-variation-settings: "CNST" 100, "wght" 600 !important;
 }
 p {
     font-family: "cardigan", sans-serif;
@@ -430,8 +430,8 @@ button {
   border:none;
   margin:0em;
   font-size:1rem;
-  font-variation-settings: "CNST" 100, "wght" 600;
-  font-family: cardigan, sans-serif;
+  font-variation-settings: "CNST" 100, "wght" 800;
+    font-family: cardigan, sans-serif;
   /* background-color: rgb(252 211 77); */
 }
 
