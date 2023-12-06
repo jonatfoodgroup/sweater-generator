@@ -1,38 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from "../components/Image";
 
-import { db } from "../firebase/database";
-import { ref, onValue } from "firebase/database";
-import { addGalleryItem } from "../firebase/storage";
-
-const Gallery = () => {
-  const [images, setImages] = React.useState([]);
-
-  React.useEffect(() => {
-    // Get the images from Firebase Storage
-    const galleryRef = ref(db, "gallery");
-    onValue(galleryRef, (snapshot) => {
-      const data = snapshot.val();
-      console.log("data: ", data);
-      if (data) {
-        const imageUrls = Object.values(data);
-        setImages(imageUrls);
-      }
-    });
-  }, []);
+const Gallery = ({
+  images = [],
+}) => {
 
   return (
     <>
-      <div
-        className="pt-10 pb-10"
-        style={{
-          // add backgroundImage from public folder:
-        
-        
-        }}
-      >
+      <div className="pt-10 pb-10">
         <div
-          className=" mx-auto  p-4 rounded-lg  mx-6 md:mx-20 text-white  bg-slate-800"
+          className="mx-auto p-4 rounded-lg mx-6 md:mx-20 text-white bg-slate-800"
           style={{ maxWidth: 1600 }}
         >
           <div className=" stitchedBorder whiteStitch sm:pl-6 sm:pr-6 px-2" id="closet">
@@ -46,15 +23,12 @@ const Gallery = () => {
 };
 
 const GalleryImages = ({ images }) => {
-  // console.log("Image Gallery Images", images);
-  const [displayedImages, setDisplayedImages] = useState(8); // Initial number of images to display
-
-  const reversedImages = images.slice().reverse(); // Create a copy of the array and reverse it
-
+  const [displayedImages, setDisplayedImages] = useState(8); 
+  const reversedImages = images.slice().reverse();
   return (
     <div className="container mx-auto flex flex-wrap justify-center py-4">
       {reversedImages.slice(0, displayedImages).map((imageObj, index) => (
-        <Image imageUrl={imageObj.url} customPrompt={imageObj.prompt} name={imageObj.username} imageID={index}  />
+        <Image imageUrl={imageObj.url} customPrompt={imageObj.prompt} name={imageObj.username} imageID={index} key={index} />
       ))}
       {images.length > displayedImages && (
         <button className='w-auto text-slate-800 py-3 px-6 text-xl rounded-md transition-colors bg-amber-300 hover:bg-amber-400 font-bold flex items-center m-auto mt-3 mb-2' onClick={() => setDisplayedImages(displayedImages + 8)}>
