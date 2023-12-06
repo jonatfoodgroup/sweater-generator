@@ -18,6 +18,7 @@ export default function Home() {
 
       const imageArray = [];
       for (const key in data) {
+        console.log(key, data[key]);
         imageArray.push({ ...data[key], id: key });
       }
       setImages(imageArray);

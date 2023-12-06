@@ -9,9 +9,13 @@ import { ref, getStorage, getBlob } from "firebase/storage";
 
 const Image = ({ imageUrl, setSelectedImage, customPrompt, name, imageID }) => {
   const [hovered, setHovered] = useState(false);
-  const shareUrl = window.location.href + "/" + imageID;
+  const shareUrl = window.location.href + imageID;
   const title = "The Food Group Holiday Sweater Generator"; 
   const quote = "Check out my sweater!"; 
+
+  const handleEmail = () => {
+    console.log("email clicked", shareUrl);
+  }
   return (
     <div className="w-full lg:w-1/4 relative">
       <div
@@ -40,7 +44,7 @@ const Image = ({ imageUrl, setSelectedImage, customPrompt, name, imageID }) => {
               >
                 <FacebookIcon size={46} round={true} />
               </FacebookShareButton>
-              <EmailShareButton url={shareUrl} subject={title} body={quote}>
+              <EmailShareButton url={shareUrl} subject={title} body={quote} onClick={handleEmail}>
                 <EmailIcon size={46} round={true} />
               </EmailShareButton>
             </div>
