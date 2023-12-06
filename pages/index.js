@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="App bg-slate-800">
       <Head>
-        <title>The Food Group Holiday Sweater Generator</title>
+        <title>The Food Group Holiday Sweater Generator!</title>
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Food Group Holiday Sweater Generator" />
         <meta property="og:description" content="Create your own holiday sweater with The Food Group's Holiday Sweater Generator." />
