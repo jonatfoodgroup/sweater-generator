@@ -62,14 +62,8 @@ const Masthead = () => {
   return (
     <div id="generator" className="h-full flex items-center">
       <div className="mastHeadmw bg-slate-800 mx-auto p-4 rounded-lg text-white z-auto shadow-2xl">
-        <div className="sm:flex stitchedBorder whiteStitch p-2 sm:p-8 z-auto">
-          <div className="sm:w-1/2 text-white sm:mr-4 sm:p-0 py-6">
-            <ImageGenerator
-              addImage={addImage}
-              setCustomPrompt={setCustomPrompt}
-              customPrompt={customPrompt}
-            />
-          </div>
+        <div className="sm:flex stitchedBorder whiteStitch p-2 sm:p-8  md:flex-row-reverse z-auto">
+         
 
           <div className="sm:mt-0 mt-4 sm:w-1/2 sm:px-0 sm:pb-0 px-6 pb-4 text-white">
             <div className="flex flex-wrap justify-center">
@@ -95,6 +89,13 @@ const Masthead = () => {
                 </div>
               )}
             </div>
+          </div>
+          <div className="sm:w-1/2 text-white sm:mr-4 sm:p-0 py-6">
+            <ImageGenerator
+              addImage={addImage}
+              setCustomPrompt={setCustomPrompt}
+              customPrompt={customPrompt}
+            />
           </div>
         </div>
       </div>
