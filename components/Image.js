@@ -44,7 +44,7 @@ const Image = ({ imageUrl, setSelectedImage, customPrompt, name, imageID }) => {
               >
                 <FacebookIcon size={46} round={true} />
               </FacebookShareButton>
-              <EmailShareButton url={shareUrl} subject={title} body={quote} onClick={handleEmail}>
+              <EmailShareButton url={shareUrl} subject={title} body={quote}>
                 <EmailIcon size={46} round={true} />
               </EmailShareButton>
             </div>
