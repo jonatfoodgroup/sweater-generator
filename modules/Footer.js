@@ -29,10 +29,13 @@ const Footer = ({
                 to Feeding America.
               </h2>
               <p
-                className="mb-4 mt-4 text-white font-bold"
+                className="mb-4 mt-4 font-bold"
                 style={{ color: "#869123" }}
               >
                 MEALS DONATED TO DATE:
+                <br />
+                {/* Add a comma in count */}
+                {count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} / 50,000
               </p>
             </div>
 
