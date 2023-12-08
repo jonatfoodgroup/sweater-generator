@@ -6,12 +6,15 @@ const ImageTiles = ({ image, customPrompt, setGeneratedImage, setPrompt }) => {
   const [showModal, setShowModal] = useState(false);
   const [newItem, setNewItem] = useState(null);
   const [isAdded, setIsAdded] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleAddToGallery = async (blob) => {
+    setIsClicked(true);
     let newItemRef = await addGalleryItem(blob, customPrompt);
     setShowModal(true);
     setNewItem(newItemRef);
     setIsAdded(true);
+    setIsClicked(false);
   };
 
   const closeModal = () => {
@@ -41,7 +44,9 @@ const ImageTiles = ({ image, customPrompt, setGeneratedImage, setPrompt }) => {
             )}
             {!isAdded && (
               <button
-                className="bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full"
+                className={`bg-amber-300 hover:bg-amber-400 transition-colors text-slate-800 rounded-b-md font-bold cursor-pointer w-full
+                ${isClicked ? "opacity-50 cursor-not-allowed" : ""}`}
+                disabled={isClicked}
                 onClick={() => handleAddToGallery(image)}
               >
                 Add to closet
