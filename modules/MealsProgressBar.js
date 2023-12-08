@@ -5,6 +5,10 @@ import ProgressBar from "@ramonak/react-progress-bar";
 const MealsProgressBar = ({
   count = 0,
 }) => {
+
+  useEffect(() => {
+    
+  }, [count]);
   return (
     <ProgressBar
       completed={count}
@@ -18,7 +22,7 @@ const MealsProgressBar = ({
       transitionDuration="5s"
       animateOnRender
       className="p-0 mt-4"
-      maxCompleted={1200}
+      maxCompleted={50000}
       customLabel={
         <div className="flex flex-col">
           <span className="text-2xl font-bold">{count}</span>
