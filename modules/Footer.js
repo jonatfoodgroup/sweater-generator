@@ -63,8 +63,24 @@ const Footer = ({
           >
             Let's Talk
           </a>
+
+
         </div>
       </div>
+      <div className="site-footer">
+
+        <a href="https://www.thefoodgroup.com" target="_blank"><img src="https://thefoodgroup.com/wp-content/uploads/2020/01/thefoodgroup.svg" alt="the food group" className="footerLogo" /></a>
+
+        <div className="socials">
+          <a href="https://www.facebook.com/thefoodgroup" target="_blank"><img src="https://thefoodgroup.com/wp-content/uploads/2020/05/social-icon-fa.svg" alt="facebook" /></a>
+          <a href="https://twitter.com/thefoodgroupUS" target="_blank"><img src="https://thefoodgroup.com/wp-content/uploads/2020/05/social-icon-tw.svg" alt="twitter" /></a>
+          <a href="https://www.linkedin.com/company/the-food-group" target="_blank"><img src="https://thefoodgroup.com/wp-content/uploads/2020/05/social-icon-ln.svg" alt="linkedin" /></a>
+          <a href="https://www.instagram.com/thefoodgroupus/" target="_blank"><img src="https://thefoodgroup.com/wp-content/uploads/2020/05/social-icon-ig.svg" alt="instagram" /></a>
+        </div>
+        <div class="copyright"><a href="https://thefoodgroup.com/privacy-policy">Privacy Policy</a> | <a href="https://thefoodgroup.com/contact-us">Contact Us</a> <br />
+ © 2023  The Food Group, a WPP Company </div>
+      </div>
+     
     </>
   );
 };
