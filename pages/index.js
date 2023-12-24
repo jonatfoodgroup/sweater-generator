@@ -7,6 +7,8 @@ import Gallery from "../modules/Gallery";
 import { db } from "../firebase/database";
 import { ref, onValue } from "firebase/database";
 
+let badWords = ["mech","ignore"]
+
 export default function Home() {
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [images, setImages] = useState([]);
@@ -18,8 +20,20 @@ export default function Home() {
 
       const imageArray = [];
       for (const key in data) {
-        console.log(key, data[key]);
-        imageArray.push({ ...data[key], id: key });
+
+        // if the prompt includes a bad word, skip it
+        let skip = false;
+        badWords.forEach((word) => {
+          if (data[key].prompt.toLowerCase().includes(word) || data[key].prompt === "") {
+            skip = true;
+          }
+        });
+
+        if (skip) {
+          continue;
+        } else {
+          imageArray.push({ ...data[key], id: key });
+        } 
       }
       setImages(imageArray);
     });
