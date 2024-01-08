@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MealsProgressBar from "./MealsProgressBar.js";
 import Snow from "../components/SnowFall.js";
 
 const Footer = ({
   count = 0,
 }) => {
+  const [mealsDonated, setMealsDonated] = React.useState(0);
+
+  useEffect(() => {
+    let threshold = 1700;
+
+    // All meals under 1700 should be counted as * 10, anything after that should be counted as * 20
+    let meals = 0;
+    if (count <= threshold) {
+      meals = count * 10;
+    } else {
+      meals = threshold * 10 + (count - threshold) * 20;
+    }
+    setMealsDonated(meals);
+  }, [count]);
+
   return (
     <>
       <div
@@ -35,12 +50,12 @@ const Footer = ({
                 MEALS DONATED TO DATE:
                 <br />
                 {/* Add a comma in count */}
-                {count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} / 50,000
+                {mealsDonated.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} / 50,000
               </p>
             </div>
 
             <div className=" max-w-4xl mx-auto ">
-              <MealsProgressBar className="p-5" count={count} />
+              <MealsProgressBar className="p-5" count={mealsDonated} />
             </div>
           </div>
         </div>

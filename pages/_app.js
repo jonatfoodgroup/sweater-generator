@@ -6,8 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
      <Head>
-     <script
-          dangerouslySetInnerHTML={{
+     <script dangerouslySetInnerHTML={{
             __html: `
               <!-- Google Tag Manager -->
               (function(w,d,s,l,i) {
