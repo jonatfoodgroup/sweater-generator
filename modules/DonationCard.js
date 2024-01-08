@@ -17,7 +17,7 @@ return (
   {/* Content on the Right */}
   <div className="mx-4 ">
     <h3 className="bg-scroll-green text-sm md:text-lg">You Generate. We Donate.</h3>
-    <p className="text-white md:text-lg">For every sweater added to our gallery, we’ll donate 10 meals to Feeding America! </p>
+    <p className="text-white md:text-lg">For every sweater added to our gallery, we’ll donate 20 meals to Feeding America! </p>
     
   </div>
 </div>

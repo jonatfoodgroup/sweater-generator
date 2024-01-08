@@ -25,7 +25,7 @@ const Footer = ({
             <div className="max-w-xl mx-auto md:text-lg">
               <h2 className="text-white">
                 But in all seriousness, it’s the season of giving! That’s why
-                for every sweater you submit The Food Group will donate 10 meals
+                for every sweater you submit The Food Group will donate 20 meals
                 to Feeding America.
               </h2>
               <p

@@ -66,7 +66,7 @@ export default function Home() {
         </div>
         <Gallery images={images} />
       </div>
-      <Footer count={images.length * 10} />
+      <Footer count={images.length * 20} />
     </div>
   );
 }
